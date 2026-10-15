@@ -2,3 +2,5 @@ __pycache__/
 *.py[cod]
 event-monitor-state.json
 event-monitor-live-state.json
+alert-state.json
+alert-state.json.tmp
