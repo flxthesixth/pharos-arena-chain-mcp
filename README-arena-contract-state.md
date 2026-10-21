@@ -4,6 +4,8 @@ This small read-only script queries the hosted [Pharos Chain MCP](https://mcp.ph
 
 Contract: [`0xc879c018db60520f4355c26ed1a6d572cdac1815`](https://www.pharosscan.xyz/address/0xc879c018db60520f4355c26ed1a6d572cdac1815) (Pharos mainnet, chain ID 1672).
 
+Live proof: https://pharos-contract-state.pages.dev/
+
 ## Run
 
 ```bash
