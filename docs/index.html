@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Read live Pharos USDC contract state through Chain MCP.">
+<title>Pharos USDC Contract State</title>
+<style>
+:root{color-scheme:dark;--bg:#090d0c;--panel:#111715;--line:#29332f;--text:#edf3ef;--muted:#9ba9a1;--green:#b8ff5a}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{width:min(1060px,calc(100% - 32px));margin:auto}header{border-bottom:1px solid var(--line)}header .wrap{display:flex;min-height:64px;align-items:center;justify-content:space-between;gap:20px}.brand,.tag{font-size:12px;font-weight:750;letter-spacing:.1em;text-transform:uppercase}.tag{color:var(--green)}a{color:inherit;text-underline-offset:3px}main{padding:72px 0}h1{max-width:850px;margin:12px 0 24px;font-size:clamp(46px,8vw,88px);font-weight:560;line-height:.94;letter-spacing:-.06em}.lead{max-width:730px;margin:0;color:#cbd5cf;font-size:clamp(18px,2vw,23px)}.meta{display:grid;grid-template-columns:repeat(3,1fr);margin:52px 0 16px;border-top:1px solid var(--line);border-left:1px solid var(--line)}.meta div,.metric{padding:20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.meta span,.metric span{display:block;color:var(--muted);font-size:11px;letter-spacing:.09em;text-transform:uppercase}.meta strong{display:block;margin-top:8px;font-size:15px;overflow-wrap:anywhere}.grid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}.metric{min-height:190px;background:var(--panel)}.metric strong{display:block;margin-top:50px;color:var(--green);font-size:clamp(34px,6vw,64px);font-weight:550;line-height:1;letter-spacing:-.05em;overflow-wrap:anywhere}.metric p{margin:12px 0 0;color:var(--muted)}section{padding-top:64px}h2{margin:0 0 18px;font-size:30px;font-weight:560;letter-spacing:-.03em}.steps{margin:0;padding-left:22px;color:#cad4ce}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}.button{display:inline-flex;min-height:48px;align-items:center;padding:0 18px;border:1px solid var(--green);background:var(--green);color:#0a0d0b;font-size:13px;font-weight:750;text-decoration:none;text-transform:uppercase}.button.secondary{background:transparent;color:var(--green)}footer{margin-top:72px;padding:24px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px}@media(max-width:680px){main{padding-top:52px}.meta,.grid{grid-template-columns:1fr}.metric{min-height:150px}.metric strong{margin-top:32px}header .tag{display:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="brand">Pharos Agent Arena</div><div class="tag">Read Contract State · Chain MCP</div></div></header>
+<main class="wrap">
+<div class="tag">Verified mainnet snapshot</div>
+<h1>Pharos USDC state, translated.</h1>
+<p class="lead">A read-only Python agent queried four values from one contract through the hosted Pharos Chain MCP. Every call was pinned to the same block, then decoded and formatted for humans.</p>
+<div class="meta">
+<div><span>Network</span><strong>Pharos mainnet · Chain ID 1672</strong></div>
+<div><span>Contract</span><strong>0xc879c018db60520f4355c26ed1a6d572cdac1815</strong></div>
+<div><span>Block</span><strong>20,820,782</strong></div>
+</div>
+<div class="grid">
+<div class="metric"><span>name()</span><strong>USDC</strong><p>Decoded ABI string</p></div>
+<div class="metric"><span>symbol()</span><strong>USDC</strong><p>Decoded ABI string</p></div>
+<div class="metric"><span>decimals()</span><strong>6</strong><p>Applied to raw supply</p></div>
+<div class="metric"><span>totalSupply()</span><strong>54,658,462.781239</strong><p>USDC, formatted from 54,658,462,781,239 base units</p></div>
+</div>
+<section>
+<h2>Reproduce the read</h2>
+<ol class="steps"><li>Initialize a session with <code>https://mcp.pharos.xyz/mcp</code>.</li><li>Read the latest block and verify chain ID <code>1672</code>.</li><li>Call all four selectors against that exact block.</li><li>Decode ABI strings and apply the token’s reported decimals.</li></ol>
+<div class="actions"><a class="button" href="https://github.com/flxthesixth/pharos-arena-chain-mcp" target="_blank" rel="noopener noreferrer">View source ↗</a><a class="button secondary" href="https://www.pharosscan.xyz/address/0xc879c018db60520f4355c26ed1a6d572cdac1815" target="_blank" rel="noopener noreferrer">Open contract ↗</a></div>
+</section>
+<footer>Observed through Pharos Chain MCP. Read-only; no wallet, signature, or transaction required.</footer>
+</main>
+</body>
+</html>
