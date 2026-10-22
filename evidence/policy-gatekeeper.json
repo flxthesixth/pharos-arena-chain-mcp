@@ -1,0 +1,13 @@
+{
+  "task": "policy-gatekeeper",
+  "observed_at": "2026-10-22T00:57:00Z",
+  "policy": {"spend_limit": "100 USDC", "allowlist_entries": 2, "time_window": "09:00-17:00 UTC"},
+  "runs": [
+    {"decision": "deny", "deciding_rule": "spend_limit", "reason": "amount must not exceed 100 USDC", "prepared": false},
+    {"decision": "deny", "deciding_rule": "allowlist", "reason": "destination is not allowlisted", "prepared": false},
+    {"decision": "deny", "deciding_rule": "time_window", "reason": "request is outside 09:00:00-17:00:00 UTC", "prepared": false},
+    {"decision": "allow", "deciding_rule": "all_rules_passed", "prepared": true, "signed": false, "broadcast": false}
+  ],
+  "audit_rows": 4,
+  "audit_format": "append-only JSON Lines with fsync"
+}

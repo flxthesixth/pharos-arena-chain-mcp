@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "fire-demo": [
+      {"metric": "block_number", "operator": ">=", "threshold": "20000000"},
+      {"metric": "gas_price_gwei", "operator": "<=", "threshold": "20"},
+      {"metric": "usdc_total_supply", "operator": ">=", "threshold": "40000000"}
+    ],
+    "hold-demo": [
+      {"metric": "block_number", "operator": ">=", "threshold": "30000000"},
+      {"metric": "gas_price_gwei", "operator": "<=", "threshold": "5"},
+      {"metric": "usdc_total_supply", "operator": ">=", "threshold": "100000000"}
+    ]
+  }
+}

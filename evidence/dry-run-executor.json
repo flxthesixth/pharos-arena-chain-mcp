@@ -1,0 +1,26 @@
+{
+  "task": "dry-run-executor",
+  "observed_at": "2026-10-22T00:57:00Z",
+  "network": "Pharos mainnet",
+  "chain_id": 1672,
+  "success": {
+    "block": 20882631,
+    "call": "decimals() on USDC",
+    "status": "success",
+    "return_data": "0x0000000000000000000000000000000000000000000000000000000000000006",
+    "gas_estimate": 40732,
+    "gas_price_wei": "10000000000",
+    "estimated_cost_wei": "407320000000000",
+    "broadcast_available": false
+  },
+  "failure": {
+    "block": 20882632,
+    "call": "malformed transfer calldata on USDC",
+    "status": "revert",
+    "revert_reason": null,
+    "reason_availability": "RPC returned no revert reason; none was fabricated.",
+    "blocked": true,
+    "exit_code": 2,
+    "broadcast_available": false
+  }
+}

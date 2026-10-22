@@ -1,0 +1,18 @@
+{
+  "task": "trend-watcher",
+  "observed_at": "2026-10-22T00:58:00Z",
+  "live_chain_mcp_observations": [
+    {"block": 20882645, "gas_price_wei": 10000000000},
+    {"block": 20882648, "gas_price_wei": 10000000000},
+    {"block": 20882651, "gas_price_wei": 10000000000}
+  ],
+  "live_outcome": "No trend: prices stayed flat.",
+  "deterministic_persistence_test": {
+    "values": [10, 30, 11, 12, 13],
+    "single_spike_triggered": false,
+    "trigger_block": 5,
+    "history_rows_after_restart": 5,
+    "duplicate_inserted_after_restart": false
+  },
+  "note": "Synthetic values test trend logic only; live observations separately prove Chain MCP ingestion."
+}

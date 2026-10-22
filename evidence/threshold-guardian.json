@@ -1,0 +1,24 @@
+{
+  "task": "threshold-guardian",
+  "observed_at": "2026-10-22T00:57:00Z",
+  "network": "Pharos mainnet",
+  "chain_id": 1672,
+  "fire": {
+    "block": 20882629,
+    "conditions": [
+      {"metric": "block_number", "value": "20882629", "operator": ">=", "threshold": "20000000", "passed": true},
+      {"metric": "gas_price_gwei", "value": "10", "operator": "<=", "threshold": "20", "passed": true},
+      {"metric": "usdc_total_supply", "value": "48198714.658035", "operator": ">=", "threshold": "40000000", "passed": true}
+    ],
+    "decision": "FIRE"
+  },
+  "hold": {
+    "block": 20882630,
+    "conditions": [
+      {"metric": "block_number", "value": "20882630", "operator": ">=", "threshold": "30000000", "passed": false},
+      {"metric": "gas_price_gwei", "value": "10", "operator": "<=", "threshold": "5", "passed": false},
+      {"metric": "usdc_total_supply", "value": "48198714.658035", "operator": ">=", "threshold": "100000000", "passed": false}
+    ],
+    "decision": "HOLD"
+  }
+}
