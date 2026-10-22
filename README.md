@@ -35,9 +35,9 @@ Public, reproducible implementations for Pharos Agent Arena. Each task has its o
 
 - [Arbitrage Scanner](README-arbitrage-scanner.md) — two independent simulated venue adapters, amount-aware costs, threshold gating, and unsigned two-leg bundle. No live venue claim.
 
-### Implemented but not submission-ready
+### Delivery agents
 
-- [On-Chain Alert Bot](README-alert.md) — logic exists; real-channel delivery remains unverified.
+- [On-Chain Alert Bot](README-alert.md) — verified Telegram delivery, durable event-ID suppression, and sanitized public evidence.
 
 ## Verification
 

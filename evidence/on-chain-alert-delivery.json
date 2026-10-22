@@ -1,0 +1,17 @@
+{
+  "demo": true,
+  "event_id": "0xe1bc1d3b5e28f7acb18a1f480ff21bbcfc2a451de899368e1ad5d597e41fe21c:4",
+  "receipt": {
+    "api_success": true,
+    "chat_id": "******7369",
+    "content_sha256": "9eaba4d21fb9d8e240ce9ea3d384538ee444c54dbc1b73e1fe285aea44493383",
+    "delivered_at": "2026-10-22T02:30:06Z",
+    "http_success": true,
+    "message_id": 8037,
+    "platform": "telegram",
+    "response_chat_matches": true,
+    "response_text_matches": true
+  },
+  "tx_url": "https://www.pharosscan.xyz/tx/0xe1bc1d3b5e28f7acb18a1f480ff21bbcfc2a451de899368e1ad5d597e41fe21c",
+  "value": "1322.899203 USDC"
+}
