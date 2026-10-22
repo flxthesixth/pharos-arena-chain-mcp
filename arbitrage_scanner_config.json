@@ -1,0 +1,45 @@
+{
+  "base_asset": {
+    "symbol": "WPHRS",
+    "address": "0x1111111111111111111111111111111111111111",
+    "decimals": 18
+  },
+  "quote_asset": {
+    "symbol": "USDC",
+    "address": "0x2222222222222222222222222222222222222222",
+    "decimals": 6
+  },
+  "trade_size_quote_atoms": "1000000000",
+  "minimum_net_profit_quote_atoms": "5000000",
+  "max_quote_age_seconds": 60,
+  "gas_price_quote_atoms_per_unit": "2",
+  "execution_slippage_bps": 30,
+  "recipient": "0x3333333333333333333333333333333333333333",
+  "deadline_unix": 4102444800,
+  "venues": [
+    {
+      "source_id": "simulated-alpha",
+      "mode": "simulated",
+      "router": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "base_asset": {"symbol": "WPHRS", "address": "0x1111111111111111111111111111111111111111", "decimals": 18},
+      "quote_asset": {"symbol": "USDC", "address": "0x2222222222222222222222222222222222222222", "decimals": 6},
+      "base_reserve_atoms": "10000000000000000000000",
+      "quote_reserve_atoms": "1000000000000",
+      "fee_bps": 10,
+      "gas_units": 120000,
+      "observed_at": "NOW"
+    },
+    {
+      "source_id": "simulated-beta",
+      "mode": "simulated",
+      "router": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "base_asset": {"symbol": "WPHRS", "address": "0x1111111111111111111111111111111111111111", "decimals": 18},
+      "quote_asset": {"symbol": "USDC", "address": "0x2222222222222222222222222222222222222222", "decimals": 6},
+      "base_reserve_atoms": "10000000000000000000000",
+      "quote_reserve_atoms": "1030000000000",
+      "fee_bps": 10,
+      "gas_units": 120000,
+      "observed_at": "NOW"
+    }
+  ]
+}

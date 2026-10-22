@@ -1,0 +1,23 @@
+{
+  "status": "failed",
+  "exit_code": 2,
+  "prepared_success": false,
+  "broadcast": false,
+  "error": {
+    "code": "aggregate3_simulation_reverted",
+    "message": "execution reverted: Multicall3: call failed"
+  },
+  "evidence": {
+    "observed_at_utc": "2026-10-22T01:47:11.920744+00:00",
+    "rpc_endpoint": "https://rpc.pharos.xyz",
+    "exact_command": "python3 batch_executor.py @batch-actions-strict-failure.json",
+    "pinned_block": {
+      "number": "0x13eb11b",
+      "hash": "0xc0d9435e9e982046c4d213f03aab96d9f39122fbaef5449da4e7d3d8421b4470",
+      "timestamp": "0x6ad96b1d"
+    },
+    "multicall3_code_size_bytes": 3808,
+    "multicall3_code_sha256": "0x2756d7c52baee85cacb504f6ee1df7aad6809ac8d94a4a111d76991f90d36d6e",
+    "multicall3_get_chain_id": 1672
+  }
+}

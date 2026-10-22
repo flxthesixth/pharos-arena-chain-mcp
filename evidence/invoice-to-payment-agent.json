@@ -1,0 +1,156 @@
+{
+  "generation_command": "python3 generate_invoice_evidence.py",
+  "json_success": {
+    "status": "ready",
+    "network": {
+      "name": "Pharos Atlantic Testnet",
+      "chain_id": 688689
+    },
+    "invoice": {
+      "payee": "0x7E5F4552091A69125d5DfCb7b8C2659029395Bdf",
+      "amount": "0.025",
+      "currency": "PHRS",
+      "reference": "ATL-INV-2026-001",
+      "format": "json"
+    },
+    "validation": {
+      "fields_complete": true,
+      "expected_record": {
+        "checked": true,
+        "match": true
+      },
+      "code_at_block": "empty",
+      "payee_code": "0x"
+    },
+    "provenance": {
+      "rpc_endpoint": "https://atlantic.dplabs-internal.com",
+      "network": "Pharos Atlantic Testnet",
+      "chain_id": 688689,
+      "block_number": "0x1e41467",
+      "block_timestamp": "0x6ad96d7a",
+      "block_timestamp_utc": "2026-10-22T01:57:14+00:00",
+      "reproduction_command": "cast code 0x7E5F4552091A69125d5DfCb7b8C2659029395Bdf --block 0x1e41467 --rpc-url https://atlantic.dplabs-internal.com  # eth_getCode pinned to exact block"
+    },
+    "payment_summary": {
+      "payee": "0x7E5F4552091A69125d5DfCb7b8C2659029395Bdf",
+      "amount": "0.025",
+      "currency": "PHRS",
+      "amount_wei": "25000000000000000",
+      "reference": "ATL-INV-2026-001"
+    },
+    "unsigned_transaction": {
+      "chainId": "0xa8231",
+      "to": "0x7E5F4552091A69125d5DfCb7b8C2659029395Bdf",
+      "value": "0x58d15e17628000",
+      "data": "0x41544c2d494e562d323032362d303031"
+    },
+    "execution": {
+      "signed": false,
+      "broadcast": false
+    }
+  },
+  "text_success": {
+    "status": "ready",
+    "network": {
+      "name": "Pharos Atlantic Testnet",
+      "chain_id": 688689
+    },
+    "invoice": {
+      "payee": "0x7E5F4552091A69125d5DfCb7b8C2659029395Bdf",
+      "amount": "0.025",
+      "currency": "PHRS",
+      "reference": "ATL-INV-2026-002",
+      "format": "text"
+    },
+    "validation": {
+      "fields_complete": true,
+      "expected_record": {
+        "checked": false,
+        "match": null
+      },
+      "code_at_block": "empty",
+      "payee_code": "0x"
+    },
+    "provenance": {
+      "rpc_endpoint": "https://atlantic.dplabs-internal.com",
+      "network": "Pharos Atlantic Testnet",
+      "chain_id": 688689,
+      "block_number": "0x1e41467",
+      "block_timestamp": "0x6ad96d7a",
+      "block_timestamp_utc": "2026-10-22T01:57:14+00:00",
+      "reproduction_command": "cast code 0x7E5F4552091A69125d5DfCb7b8C2659029395Bdf --block 0x1e41467 --rpc-url https://atlantic.dplabs-internal.com  # eth_getCode pinned to exact block"
+    },
+    "payment_summary": {
+      "payee": "0x7E5F4552091A69125d5DfCb7b8C2659029395Bdf",
+      "amount": "0.025",
+      "currency": "PHRS",
+      "amount_wei": "25000000000000000",
+      "reference": "ATL-INV-2026-002"
+    },
+    "unsigned_transaction": {
+      "chainId": "0xa8231",
+      "to": "0x7E5F4552091A69125d5DfCb7b8C2659029395Bdf",
+      "value": "0x58d15e17628000",
+      "data": "0x41544c2d494e562d323032362d303032"
+    },
+    "execution": {
+      "signed": false,
+      "broadcast": false
+    }
+  },
+  "missing_field": {
+    "status": "blocked",
+    "errors": [
+      "missing fields: reference"
+    ],
+    "unsigned_transaction": null,
+    "execution": {
+      "signed": false,
+      "broadcast": false
+    }
+  },
+  "json_expected_mismatch": {
+    "status": "blocked",
+    "errors": [
+      "mismatch against expected record: amount"
+    ],
+    "unsigned_transaction": null,
+    "execution": {
+      "signed": false,
+      "broadcast": false
+    }
+  },
+  "text_expected_mismatch": {
+    "status": "blocked",
+    "errors": [
+      "mismatch against expected record: reference"
+    ],
+    "unsigned_transaction": null,
+    "execution": {
+      "signed": false,
+      "broadcast": false
+    }
+  },
+  "zero_address": {
+    "status": "blocked",
+    "errors": [
+      "payee must not be the zero address"
+    ],
+    "unsigned_transaction": null,
+    "execution": {
+      "signed": false,
+      "broadcast": false
+    }
+  },
+  "chain_id_mismatch": {
+    "status": "blocked",
+    "errors": [
+      "Atlantic RPC chain ID mismatch: expected 688689, got '0x1'"
+    ],
+    "unsigned_transaction": null,
+    "execution": {
+      "signed": false,
+      "broadcast": false
+    }
+  }
+}

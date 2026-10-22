@@ -1,0 +1,118 @@
+{
+  "scan_timestamp": "2026-10-22T01:46:41.734379+00:00",
+  "scanner_mode": "DETERMINISTIC_SIMULATION_NOT_LIVE",
+  "asset_pair": "WPHRS/USDC",
+  "units": {
+    "base": {
+      "symbol": "WPHRS",
+      "address": "0x1111111111111111111111111111111111111111",
+      "decimals": 18
+    },
+    "quote": {
+      "symbol": "USDC",
+      "address": "0x2222222222222222222222222222222222222222",
+      "decimals": 6
+    },
+    "all_amounts": "integer smallest-unit atoms"
+  },
+  "trade_size_quote_atoms": "1000000000",
+  "source_reads": [
+    {
+      "request": {
+        "pair": "WPHRS/USDC",
+        "amount_in_quote_atoms": "1000000000"
+      },
+      "raw_response": {
+        "source_id": "simulated-alpha",
+        "mode": "simulated",
+        "observed_at": "2026-10-22T01:46:41.734379+00:00",
+        "pair": "WPHRS/USDC",
+        "base_asset": {
+          "symbol": "WPHRS",
+          "address": "0x1111111111111111111111111111111111111111",
+          "decimals": 18
+        },
+        "quote_asset": {
+          "symbol": "USDC",
+          "address": "0x2222222222222222222222222222222222222222",
+          "decimals": 6
+        },
+        "base_reserve_atoms": "10000000000000000000000",
+        "quote_reserve_atoms": "1000000000000",
+        "fee_bps": 10,
+        "router": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "gas_units": 120000
+      }
+    },
+    {
+      "request": {
+        "pair": "WPHRS/USDC",
+        "amount_in_quote_atoms": "1000000000"
+      },
+      "raw_response": {
+        "source_id": "simulated-beta",
+        "mode": "simulated",
+        "observed_at": "2026-10-22T01:46:41.734379+00:00",
+        "pair": "WPHRS/USDC",
+        "base_asset": {
+          "symbol": "WPHRS",
+          "address": "0x1111111111111111111111111111111111111111",
+          "decimals": 18
+        },
+        "quote_asset": {
+          "symbol": "USDC",
+          "address": "0x2222222222222222222222222222222222222222",
+          "decimals": 6
+        },
+        "base_reserve_atoms": "10000000000000000000000",
+        "quote_reserve_atoms": "1030000000000",
+        "fee_bps": 10,
+        "router": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "gas_units": 120000
+      }
+    }
+  ],
+  "route": {
+    "buy_at": "simulated-alpha",
+    "sell_at": "simulated-beta",
+    "actual_buy_output_base_atoms": "9980029950079870209",
+    "actual_sell_output_quote_atoms": "1025892322"
+  },
+  "gross_spread_quote_atoms": "30000000",
+  "costs_quote_atoms": {
+    "buy_venue_fee": "1030000",
+    "sell_venue_fee": "1027943",
+    "price_impact_slippage": "2049735",
+    "gas": "480000",
+    "total": "4587678"
+  },
+  "net_profit_quote_atoms": "25412322",
+  "minimum_net_profit_quote_atoms": "5000000",
+  "decision": "PREPARE",
+  "reason": "net profit 25412322 exceeds threshold 5000000 quote atoms",
+  "prepared_execution": {
+    "type": "unsigned-two-leg-simulated-calldata-bundle",
+    "atomic": true,
+    "signed": false,
+    "broadcast": false,
+    "chain": "simulation-only",
+    "calls": [
+      {
+        "leg": "buy",
+        "source_id": "simulated-alpha",
+        "to": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "value": "0",
+        "gas_limit": "120000",
+        "calldata": "0x38ed1739000000000000000000000000000000000000000000000000000000003b9aca000000000000000000000000000000000000000000000000008a15d20292340a8600000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000333333333333333333333333333333333333333300000000000000000000000000000000000000000000000000000000f4865700000000000000000000000000000000000000000000000000000000000000000200000000000000000000000022222222222222222222222222222222222222220000000000000000000000001111111111111111111111111111111111111111"
+      },
+      {
+        "leg": "sell",
+        "source_id": "simulated-beta",
+        "to": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "value": "0",
+        "gas_limit": "120000",
+        "calldata": "0x38ed17390000000000000000000000000000000000000000000000008a80305cf6452501000000000000000000000000000000000000000000000000000000003cf6e9b500000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000333333333333333333333333333333333333333300000000000000000000000000000000000000000000000000000000f4865700000000000000000000000000000000000000000000000000000000000000000200000000000000000000000011111111111111111111111111111111111111110000000000000000000000002222222222222222222222222222222222222222"
+      }
+    ]
+  }
+}

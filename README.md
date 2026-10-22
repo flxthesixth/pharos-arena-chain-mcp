@@ -1,24 +1,64 @@
-# Pharos MCP examples for Agent Arena
+# Pharos Agent Arena Tools
 
-Four read-only Python scripts for Pharos Agent Arena. They query [Pharos Chain MCP](https://mcp.pharos.xyz/mcp) or [Developer Docs MCP](https://docs.pharos.xyz/~gitbook/mcp) without a wallet or third-party Python packages.
+Public, reproducible implementations for Pharos Agent Arena. Each task has its own README, source, tests, evidence, and deployed proof page where submitted.
 
-- [Read Contract State](README-arena-contract-state.md): fetch four values from the mainnet USDC contract at one block.
-- [Event/Log Monitor](README-arena-event-monitor.md): poll USDC `Transfer` logs, decode new events, and save a local cursor.
-- [Doc-Search CLI](README-doc-search.md): ask the separate [Developer Docs MCP](https://docs.pharos.xyz/~gitbook/mcp) a natural-language question and print sourced results.
-- [On-Chain Alert Bot](README-alert.md): filter USDC transfers and send qualifying events to a configured Discord webhook. Real-channel delivery is not yet verified.
-- [Doc-Grounded Builder Agent](README-doc-grounded-builder.md): plan three read-only how-do-I requests from cited Docs MCP answers, execute with Chain MCP, and verify results.
+## Task Index
+
+### Live read-only chain tools
+
+- [Read Contract State](README-arena-contract-state.md) — Pharos mainnet; four USDC reads pinned to one block.
+- [Event/Log Monitor](README-arena-event-monitor.md) — Pharos mainnet; persistent filtered event polling and deduplication.
+- [Threshold Guardian](README-threshold-guardian.md) — Pharos mainnet; three configurable chain conditions with FIRE/HOLD traces.
+- [Dry-Run Executor](README-dry-run-executor.md) — Pharos mainnet; transaction simulation, gas estimate, and fail-closed execution guard.
+- [Trend Watcher](README-trend-watcher.md) — Pharos mainnet; persistent observations and configurable trend detection.
+- [Whale-Watching Agent](README-whale-watcher.md) — Pharos mainnet; five-address USDC activity summary and significant-move filtering.
+- [Wallet Risk Checker](README-wallet-risk-checker.md) — Pharos mainnet; explainable heuristic screening from six on-chain signals.
+- [Audit-Log Agent](README-audit-log-agent.md) — Pharos mainnet; date-range activity categories, totals, links, and Markdown export.
+- [dApp Support Agent](README-dapp-support-agent.md) — Pharos mainnet; failed-transaction diagnosis from transaction, receipt, and historical replay.
+
+### Docs and multi-tool agents
+
+- [Doc-Search CLI](README-doc-search.md) — sourced natural-language search over Developer Docs MCP.
+- [Docs MCP Onboarding](README-docs-mcp-onboarding.md) — first-use log with three concrete documentation gaps and fixes.
+- [Skill + Chain MCP Flow](README-skill-chain-mcp-flow.md) — one request moves live data through Chain MCP and the Pharos Skill Engine read procedure.
+- [Docs MCP + Chain MCP Agent](README-docs-chain-mcp-agent.md) — explains two functions from docs, calls them on chain, and interprets results.
+- [Doc-Grounded Builder](README-doc-grounded-builder.md) — cited plans before Chain MCP execution for three read-only requests.
+
+### Policy and unsigned preparation
+
+- [Policy Gatekeeper](README-policy-gatekeeper.md) — spend, allowlist, and time-window rules with append-only audit decisions.
+- [Natural-Language Payment Agent](README-natural-language-payment-agent.md) — Atlantic testnet live validation and unsigned wallet request only.
+- [Invoice-to-Payment Agent](README-invoice-payment-agent.md) — Atlantic testnet invoice parsing and unsigned native-payment payload with reference data.
+- [Batch Executor](README-batch-executor.md) — Pharos mainnet Multicall3 simulation with tolerant and strict failure evidence.
+
+### Explicit simulation
+
+- [Arbitrage Scanner](README-arbitrage-scanner.md) — two independent simulated venue adapters, amount-aware costs, threshold gating, and unsigned two-leg bundle. No live venue claim.
+
+### Implemented but not submission-ready
+
+- [On-Chain Alert Bot](README-alert.md) — logic exists; real-channel delivery remains unverified.
+
+## Verification
 
 ```bash
-python3 arena_contract_state.py --self-test
-python3 arena_contract_state.py
-python3 arena_event_monitor.py --self-test
-python3 arena_event_monitor.py --interval 15
-python3 pharos_docs.py --self-test
-python3 pharos_docs.py "What is the Pharos Pacific Mainnet chain ID?"
-python3 pharos_alert.py --self-test
-python3 -m unittest -v test_doc_grounded_builder.py
-python3 doc_grounded_builder.py "How do I check the Pharos chain ID?"
-# For real Discord delivery, see README-alert.md.
+python3 -m compileall -q .
+python3 -m unittest discover -v
 ```
 
-Python 3.9+ and HTTPS access required. The Chain MCP scripts check chain ID before queries. No transactions or task submissions are made by these scripts.
+Current full suite: 72 tests. Python standard library is used unless a documented system CLI is required.
+
+## Evidence Rules
+
+- Live observations name network, chain ID, block, and source.
+- Deterministic fixtures are labelled as simulation and never presented as live data.
+- Unsigned preparation tools never request private keys, sign, or broadcast.
+- Gas estimates are observations, not paid gas or benchmarks.
+- Public evidence contains no credentials.
+
+## Public Links
+
+- Repository: https://github.com/flxthesixth/pharos-arena-chain-mcp
+- Proof site: https://pharos-contract-state.pages.dev/
+
+Task submission and reviewer approval are separate from repository implementation. README and evidence files do not imply awarded points.

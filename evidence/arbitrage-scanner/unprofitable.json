@@ -1,0 +1,93 @@
+{
+  "scan_timestamp": "2026-10-22T01:46:53.793065+00:00",
+  "scanner_mode": "DETERMINISTIC_SIMULATION_NOT_LIVE",
+  "asset_pair": "WPHRS/USDC",
+  "units": {
+    "base": {
+      "symbol": "WPHRS",
+      "address": "0x1111111111111111111111111111111111111111",
+      "decimals": 18
+    },
+    "quote": {
+      "symbol": "USDC",
+      "address": "0x2222222222222222222222222222222222222222",
+      "decimals": 6
+    },
+    "all_amounts": "integer smallest-unit atoms"
+  },
+  "trade_size_quote_atoms": "1000000000",
+  "source_reads": [
+    {
+      "request": {
+        "pair": "WPHRS/USDC",
+        "amount_in_quote_atoms": "1000000000"
+      },
+      "raw_response": {
+        "source_id": "simulated-alpha",
+        "mode": "simulated",
+        "observed_at": "2026-10-22T01:46:53.793065+00:00",
+        "pair": "WPHRS/USDC",
+        "base_asset": {
+          "symbol": "WPHRS",
+          "address": "0x1111111111111111111111111111111111111111",
+          "decimals": 18
+        },
+        "quote_asset": {
+          "symbol": "USDC",
+          "address": "0x2222222222222222222222222222222222222222",
+          "decimals": 6
+        },
+        "base_reserve_atoms": "10000000000000000000000",
+        "quote_reserve_atoms": "1000000000000",
+        "fee_bps": 10,
+        "router": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "gas_units": 120000
+      }
+    },
+    {
+      "request": {
+        "pair": "WPHRS/USDC",
+        "amount_in_quote_atoms": "1000000000"
+      },
+      "raw_response": {
+        "source_id": "simulated-beta",
+        "mode": "simulated",
+        "observed_at": "2026-10-22T01:46:53.793065+00:00",
+        "pair": "WPHRS/USDC",
+        "base_asset": {
+          "symbol": "WPHRS",
+          "address": "0x1111111111111111111111111111111111111111",
+          "decimals": 18
+        },
+        "quote_asset": {
+          "symbol": "USDC",
+          "address": "0x2222222222222222222222222222222222222222",
+          "decimals": 6
+        },
+        "base_reserve_atoms": "10000000000000000000000",
+        "quote_reserve_atoms": "1030000000000",
+        "fee_bps": 10,
+        "router": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "gas_units": 120000
+      }
+    }
+  ],
+  "route": {
+    "buy_at": "simulated-alpha",
+    "sell_at": "simulated-beta",
+    "actual_buy_output_base_atoms": "9980029950079870209",
+    "actual_sell_output_quote_atoms": "1025892322"
+  },
+  "gross_spread_quote_atoms": "30000000",
+  "costs_quote_atoms": {
+    "buy_venue_fee": "1030000",
+    "sell_venue_fee": "1027943",
+    "price_impact_slippage": "2049735",
+    "gas": "480000",
+    "total": "4587678"
+  },
+  "net_profit_quote_atoms": "25412322",
+  "minimum_net_profit_quote_atoms": "999999999",
+  "decision": "SKIP",
+  "reason": "net profit 25412322 does not exceed threshold 999999999 quote atoms"
+}

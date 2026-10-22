@@ -1,0 +1,20 @@
+[
+  {
+    "label": "read block number",
+    "target": "0xca11bde05977b3631167028862be2a173976ca11",
+    "allow_failure": false,
+    "data": "0x42cbb15c"
+  },
+  {
+    "label": "read chain id",
+    "target": "0xca11bde05977b3631167028862be2a173976ca11",
+    "allow_failure": false,
+    "data": "0x3408e470"
+  },
+  {
+    "label": "read timestamp",
+    "target": "0xca11bde05977b3631167028862be2a173976ca11",
+    "allow_failure": false,
+    "data": "0x0f28c97d"
+  }
+]

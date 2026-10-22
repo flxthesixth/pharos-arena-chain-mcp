@@ -1,0 +1,51 @@
+{
+  "status": "ready_for_wallet",
+  "summary": "Send 1.25 USDC from 0x1478c81e94a7d7751b344f99fef7b90d1260dfef to 0x00000000000000000000000000000000000000aa on Pharos Atlantic testnet.",
+  "validation": {
+    "recipient_format": "valid",
+    "token_contract": "0xE0BE08c77f415F577A1B3A9aD7a1Df1479564ec8",
+    "token_contract_code_and_metadata_valid": true,
+    "symbol": "USDC",
+    "decimals": 6,
+    "sender_balance": "998999999988977630000",
+    "sufficient_balance": true,
+    "block": 31724361,
+    "chain_id": 688689,
+    "sender_explorer": "https://atlantic.pharosscan.xyz/address/0x1478c81e94a7d7751b344f99fef7b90d1260dfef",
+    "recipient_explorer": "https://atlantic.pharosscan.xyz/address/0x00000000000000000000000000000000000000aa",
+    "transfer_simulation_succeeded": true
+  },
+  "unsigned_transaction": {
+    "from": "0x1478c81e94a7d7751b344f99fef7b90d1260dfef",
+    "to": "0xE0BE08c77f415F577A1B3A9aD7a1Df1479564ec8",
+    "value": "0x0",
+    "data": "0xa9059cbb00000000000000000000000000000000000000000000000000000000000000aa00000000000000000000000000000000000000000000000000000000001312d0",
+    "chainId": "0xa8231"
+  },
+  "wallet_request": {
+    "method": "eth_sendTransaction",
+    "params": [
+      {
+        "from": "0x1478c81e94a7d7751b344f99fef7b90d1260dfef",
+        "to": "0xE0BE08c77f415F577A1B3A9aD7a1Df1479564ec8",
+        "value": "0x0",
+        "data": "0xa9059cbb00000000000000000000000000000000000000000000000000000000000000aa00000000000000000000000000000000000000000000000000000000001312d0",
+        "chainId": "0xa8231"
+      }
+    ]
+  },
+  "safety": {
+    "signed": false,
+    "broadcast": false,
+    "private_key_requested": false,
+    "user_wallet_confirmation_required": true
+  },
+  "evidence": {
+    "generated_at": "2026-10-22T01:45:38.719472Z",
+    "command": "python3 natural_language_payment_agent.py 'Please send 1.25 USDC to 0x00000000000000000000000000000000000000aa' --from 0x1478c81e94a7d7751b344f99fef7b90d1260dfef",
+    "rpc_endpoint": "https://atlantic.dplabs-internal.com",
+    "fixed_block": 31724361,
+    "source_mode": "live_rpc",
+    "source_version": "1.1.0"
+  }
+}
