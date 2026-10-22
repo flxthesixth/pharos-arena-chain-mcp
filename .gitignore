@@ -4,3 +4,5 @@ event-monitor-state.json
 event-monitor-live-state.json
 alert-state.json
 alert-state.json.tmp
+.wrangler/
+arena-tasks.json

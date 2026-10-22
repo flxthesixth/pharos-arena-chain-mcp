@@ -1,0 +1,28 @@
+{
+  "task": "doc-search-cli",
+  "observed_at": "2026-10-22T00:42:36Z",
+  "self_test": "passed",
+  "queries": [
+    {
+      "question": "What is the chain ID and RPC URL of Pharos Pacific Mainnet?",
+      "result": "Chain ID 1672; RPC URL https://rpc.pharos.xyz",
+      "source": "https://docs.pharos.xyz/getting-started/network/pacific-mainnet"
+    },
+    {
+      "question": "How do I deploy a smart contract on Pharos with Foundry?",
+      "result": "Returned a concise forge build, forge test, and forge script deployment sequence.",
+      "source": "https://docs.pharos.xyz/developer-guide/foundry/write-your-first-dapp"
+    },
+    {
+      "question": "How do I raise purple dragons on Pharos using jellybeans?",
+      "result": "No good answer found in Pharos docs. Try a more specific question.",
+      "source": null
+    }
+  ],
+  "commands": [
+    "python3 pharos_docs.py --self-test",
+    "python3 pharos_docs.py \"What is the chain ID and RPC URL of Pharos Pacific Mainnet?\"",
+    "python3 pharos_docs.py \"How do I deploy a smart contract on Pharos with Foundry?\"",
+    "python3 pharos_docs.py \"How do I raise purple dragons on Pharos using jellybeans?\""
+  ]
+}

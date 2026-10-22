@@ -1,0 +1,26 @@
+{
+  "task": "event-log-monitor",
+  "observed_at": "2026-10-22T00:42:36Z",
+  "network": "Pharos mainnet",
+  "chain_id": 1672,
+  "contract": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+  "event_signature": "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+  "first_poll_events": 77,
+  "second_poll_events": 89,
+  "duplicate_keys_across_polls": 0,
+  "cursor_after_second_poll": 20863762,
+  "sample": {
+    "block": 20861765,
+    "tx_hash": "0x9c2d742905391ab88ec0b3309e352fc5dd966edc08f5f5f71af9790000ef7cb8",
+    "log_index": 1,
+    "from": "0x912c9ade24d44d8922f0866d8dcb079f1363f647",
+    "to": "0xa5ca5fbe34e444f366b373170541ec6902b0f75c",
+    "amount": "10.015165",
+    "symbol": "USDC"
+  },
+  "commands": [
+    "python3 arena_event_monitor.py --self-test",
+    "python3 arena_event_monitor.py --state /tmp/pharos-event-state.json --backfill 20000 --once",
+    "python3 arena_event_monitor.py --state /tmp/pharos-event-state.json --once"
+  ]
+}
