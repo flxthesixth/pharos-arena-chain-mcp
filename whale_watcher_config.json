@@ -1,0 +1,25 @@
+{
+  "network": {
+    "name": "Pharos mainnet",
+    "chain_id": 1672,
+    "explorer": "https://www.pharosscan.xyz"
+  },
+  "lookback_blocks": 10000,
+  "tokens": {
+    "0xc879c018db60520f4355c26ed1a6d572cdac1815": {
+      "symbol": "USDC",
+      "decimals": 6,
+      "significant_threshold": "1000"
+    }
+  },
+  "watched_addresses": {
+    "0x912c9ade24d44d8922f0866d8dcb079f1363f647": "active wallet 1",
+    "0x946dc10e5d56a3d7619859be53f99d3e4e3c4cef": "active wallet 2",
+    "0x422615e302eb064a440f5be03400e03b6655abb6": "active wallet 3",
+    "0xff70f4a1d11995621854f3692acf286d8acd04b2": "active wallet 4",
+    "0x4fd44181839d24e7c8f4d1b9288379109ec25fae": "active wallet 5"
+  },
+  "known_labels": {
+    "0xc879c018db60520f4355c26ed1a6d572cdac1815": "USDC token"
+  }
+}

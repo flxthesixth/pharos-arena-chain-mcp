@@ -1,0 +1,180 @@
+{
+  "task": "wallet-risk-checker",
+  "source": "Pharos Chain MCP",
+  "endpoint": "https://mcp.pharos.xyz/mcp",
+  "observations_are_genuine": true,
+  "clean_example": {
+    "address": "0xb02627392ff222e997370e0d1d2ab6b846d76b59",
+    "risk_level": "low",
+    "score": 0,
+    "reasons": [
+      "No risk rules fired in available on-chain signals."
+    ],
+    "signals": [
+      {
+        "name": "contract_code",
+        "value": false,
+        "flagged": false,
+        "plain_language": "No bytecode exists, so this address is an externally owned wallet."
+      },
+      {
+        "name": "native_balance",
+        "value_wei": 102253124359823000,
+        "flagged": false,
+        "plain_language": "Wallet holds 102253124359823000 wei of native PROS."
+      },
+      {
+        "name": "outgoing_nonce",
+        "value": 8,
+        "flagged": false,
+        "plain_language": "Wallet has submitted 8 confirmed outgoing transactions over its lifetime."
+      },
+      {
+        "name": "recent_activity",
+        "incoming": 0,
+        "outgoing": 0,
+        "flagged": false,
+        "plain_language": "Last 20 blocks contain 0 incoming and 0 outgoing transactions."
+      },
+      {
+        "name": "approval_pattern",
+        "approvals": 0,
+        "unique_spenders": 0,
+        "flagged": false,
+        "plain_language": "Recent logs contain 0 token approvals to 0 unique spenders."
+      },
+      {
+        "name": "flagged_address_interaction",
+        "addresses": [],
+        "flagged": false,
+        "plain_language": "No recent direct transaction involved a configured flagged address."
+      }
+    ],
+    "rules": {
+      "medium": "score 1-2",
+      "high": "score 3 or more"
+    },
+    "limitations": [
+      "Code presence is observable; source-code verification is not exposed by Chain MCP.",
+      "Activity and approvals are limited to the selected recent block window."
+    ],
+    "evidence": {
+      "balance_wei": 102253124359823000,
+      "nonce": 8,
+      "code": "0x",
+      "incoming": 0,
+      "outgoing": 0,
+      "approval_count": 0,
+      "unique_spenders": 0,
+      "flagged_interactions": [],
+      "window_from": 20883588,
+      "window_to": 20883607,
+      "chain": {
+        "name": "Pharos",
+        "chain_id": 1672
+      },
+      "provenance": {
+        "provider": "Pharos Chain MCP",
+        "endpoint": "https://mcp.pharos.xyz/mcp",
+        "tools": [
+          "get_chain_info",
+          "get_balance",
+          "get_transaction_count",
+          "get_code",
+          "get_logs",
+          "get_block"
+        ]
+      }
+    }
+  },
+  "risky_example": {
+    "address": "0x013de7ba7ebd8d186bebf4f08fbd229dfb362906",
+    "risk_level": "high",
+    "score": 3,
+    "reasons": [
+      "Freshly funded wallet: it has funds and a recent incoming transfer but lifetime outgoing nonce is zero.",
+      "No outgoing transaction appears in the inspected window despite incoming funds."
+    ],
+    "signals": [
+      {
+        "name": "contract_code",
+        "value": false,
+        "flagged": false,
+        "plain_language": "No bytecode exists, so this address is an externally owned wallet."
+      },
+      {
+        "name": "native_balance",
+        "value_wei": 15586186450076532507,
+        "flagged": false,
+        "plain_language": "Wallet holds 15586186450076532507 wei of native PROS."
+      },
+      {
+        "name": "outgoing_nonce",
+        "value": 0,
+        "flagged": true,
+        "plain_language": "Wallet has submitted 0 confirmed outgoing transactions over its lifetime."
+      },
+      {
+        "name": "recent_activity",
+        "incoming": 1,
+        "outgoing": 0,
+        "flagged": true,
+        "plain_language": "Last 1 blocks contain 1 incoming and 0 outgoing transactions."
+      },
+      {
+        "name": "approval_pattern",
+        "approvals": 0,
+        "unique_spenders": 0,
+        "flagged": false,
+        "plain_language": "Recent logs contain 0 token approvals to 0 unique spenders."
+      },
+      {
+        "name": "flagged_address_interaction",
+        "addresses": [],
+        "flagged": false,
+        "plain_language": "No recent direct transaction involved a configured flagged address."
+      }
+    ],
+    "rules": {
+      "medium": "score 1-2",
+      "high": "score 3 or more"
+    },
+    "limitations": [
+      "Code presence is observable; source-code verification is not exposed by Chain MCP.",
+      "Activity and approvals are limited to the selected recent block window."
+    ],
+    "evidence": {
+      "balance_wei": 15586186450076532507,
+      "nonce": 0,
+      "code": "0x",
+      "incoming": 1,
+      "outgoing": 0,
+      "approval_count": 0,
+      "unique_spenders": 0,
+      "flagged_interactions": [],
+      "window_from": 20883509,
+      "window_to": 20883509,
+      "chain": {
+        "name": "Pharos",
+        "chain_id": 1672
+      },
+      "provenance": {
+        "provider": "Pharos Chain MCP",
+        "endpoint": "https://mcp.pharos.xyz/mcp",
+        "tools": [
+          "get_chain_info",
+          "get_balance",
+          "get_transaction_count",
+          "get_code",
+          "get_logs",
+          "get_block"
+        ]
+      }
+    }
+  },
+  "verification": {
+    "unit_tests": "6 passed",
+    "compile": "passed"
+  },
+  "note": "Labels are deterministic outputs of documented rules; no maliciousness labels were fabricated. Source verification unavailable from Chain MCP, so only code presence is reported."
+}

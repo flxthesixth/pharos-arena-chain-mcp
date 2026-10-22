@@ -1,0 +1,66 @@
+{
+  "task": "dapp-support-agent",
+  "observed_at": "2026-10-22T01:23:32.409721+00:00",
+  "network": "Pharos mainnet",
+  "chain_id": 1672,
+  "tx_hash": "0xbdf364aae1cd40ea554119ec7c6b63559026322eb6c69c28d4c0eaa413c4b0e3",
+  "explorer": "https://www.pharosscan.xyz/tx/0xbdf364aae1cd40ea554119ec7c6b63559026322eb6c69c28d4c0eaa413c4b0e3",
+  "chain_mcp": {
+    "transaction_tool": "get_transaction",
+    "receipt_tool": "get_transaction_receipt",
+    "replay_tool": "eth_call",
+    "replay_block": "0x13e6f9a",
+    "transaction": {
+      "accessList": [],
+      "blockHash": "0xb060ecf7829d093cd3af8c141f2adcdfbab00f28f7c03657b613bf4ce37e7ef9",
+      "blockNumber": "0x13e6f9b",
+      "blockTimestamp": "0x6ad9294c",
+      "chainId": "0x688",
+      "from": "0xc0e9d2ebebaa090bb24b944431e46605daaf1f18",
+      "gas": "0x5208",
+      "gasPrice": "0x2541b2640",
+      "hash": "0xbdf364aae1cd40ea554119ec7c6b63559026322eb6c69c28d4c0eaa413c4b0e3",
+      "input": "0x",
+      "maxFeePerGas": "0x2541b2640",
+      "maxPriorityFeePerGas": "0xf4240",
+      "nonce": "0x3",
+      "r": "0x909ce20aca44ef55708d811c416ecb881afe99f63f45a139b8f469c233ba0524",
+      "s": "0x23057c29811ad5e1cbe95318d56c7361be41e1d51018f863499c05da0a9ad75f",
+      "to": "0x33f4304e53ba86678bb52e56ed810ab4b0fe38c9",
+      "transactionIndex": "0x0",
+      "type": "0x2",
+      "v": "0x0",
+      "value": "0x616606aa2015c0",
+      "yParity": "0x0"
+    },
+    "receipt": {
+      "blockHash": "0xb060ecf7829d093cd3af8c141f2adcdfbab00f28f7c03657b613bf4ce37e7ef9",
+      "blockNumber": "0x13e6f9b",
+      "contractAddress": null,
+      "cumulativeGasUsed": "0x5208",
+      "effectiveGasPrice": "0x2541b2640",
+      "from": "0xc0e9d2ebebaa090bb24b944431e46605daaf1f18",
+      "gasUsed": "0x5208",
+      "logs": [],
+      "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "status": "0x0",
+      "to": "0x33f4304e53ba86678bb52e56ed810ab4b0fe38c9",
+      "transactionHash": "0xbdf364aae1cd40ea554119ec7c6b63559026322eb6c69c28d4c0eaa413c4b0e3",
+      "transactionIndex": "0x0",
+      "type": "0x2"
+    },
+    "replay": {
+      "error": {
+        "message": "The caller does not have enough funds for value transfer.",
+        "code": -32029
+      }
+    }
+  },
+  "diagnosis": {
+    "failure_type": "insufficient_native_balance",
+    "technical_cause": "The caller does not have enough funds for value transfer.",
+    "plain_explanation": "Sender did not have enough PROS to cover transfer value and network fee.",
+    "suggested_fix": "Add PROS or send a smaller amount, then estimate the fee before retrying."
+  },
+  "read_only": true
+}
