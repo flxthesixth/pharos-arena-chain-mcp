@@ -1,0 +1,32 @@
+{
+  "task": "docs-mcp-onboarding",
+  "observed_at": "2026-10-22T00:45:00Z",
+  "goal": "Build a sourced docs CLI and restart-safe Chain MCP event monitor.",
+  "gaps": [
+    {
+      "query": "What is the maximum supported eth_getLogs block range on Pharos Pacific Mainnet?",
+      "answer": "100 blocks with rate limiting or a 10,000-block fallback cap.",
+      "gap": "A separate Chain MCP answer says 1,000 blocks, but neither answer explains which layer takes precedence.",
+      "fix": "State that hosted Chain MCP get_logs accepts at most 1,000 blocks and direct RPC providers may enforce different limits."
+    },
+    {
+      "query": "Does Pharos Chain MCP get_logs accept an array of contract addresses? Show the exact schema.",
+      "answer": "The docs do not confirm array support and do not publish the exact MCP JSON schema.",
+      "gap": "Clients cannot validate the filter or rely on multi-address behavior.",
+      "fix": "Publish the exact input schema, topic semantics, supported tags, response shape, and validation errors."
+    },
+    {
+      "query": "What HTTP headers and initialization handshake are required before calling Pharos Chain MCP tools from Python?",
+      "answer": "No good answer found in Pharos docs. Try a more specific question.",
+      "gap": "No end-to-end raw HTTP initialization and session example.",
+      "fix": "Document initialize, required headers, Mcp-Session-Id, tools/call, SSE parsing, and session errors in one Python example."
+    }
+  ],
+  "result": {
+    "docs_cli": "Built and self-tested",
+    "event_monitor": "Built and self-tested",
+    "fresh_mainnet_poll_1": 77,
+    "fresh_mainnet_poll_2": 89,
+    "duplicate_keys": 0
+  }
+}
