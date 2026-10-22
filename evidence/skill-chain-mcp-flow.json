@@ -1,0 +1,27 @@
+{
+  "task": "skill-chain-mcp-flow",
+  "observed_at": "2026-10-22T01:08:00Z",
+  "request": "verify the live USDC decimals through Chain MCP and Skill Engine",
+  "network": "Pharos mainnet",
+  "chain_id": 1672,
+  "chain_mcp": {
+    "block": 20883228,
+    "contract": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+    "function": "decimals()",
+    "value": 6
+  },
+  "skill_engine": {
+    "procedure": "Read Contract",
+    "source": "pharos-skill-engine/references/query.md#contract-read-only-call",
+    "input_from_chain_mcp": {
+      "block": 20883228,
+      "contract": "0xc879c018db60520f4355c26ed1a6d572cdac1815"
+    },
+    "function": "decimals()(uint8)",
+    "value": 6
+  },
+  "result": {
+    "verified": true,
+    "interpretation": "USDC uses 6 decimals."
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "request": "How do I check the Pharos chain ID?",
+  "status": "success",
+  "plan": {
+    "docs_question": "How do I check Pharos network chain ID with JSON-RPC eth_chainId?",
+    "docs_answer": "Send a JSON-RPC `POST` request to the Pharos RPC endpoint:\n\n```bash\ncurl https://rpc.pharos.xyz \\\n  -H \"Content-Type: application/json\" \\\n  --data '{\"jsonrpc\":\"2.0\",\"method\":\"eth_chainId\",\"params\":[],\"id\":1}'\n```\n\nFor Pacific Mainnet, the response\u2019s `result` is `0x688` \u2014 hexadecimal for chain ID `1672`. The method returns the chain ID as a hexadecimal string. See [JSON-RPC API Methods](/api-and-sdk/json-rpc-methods) and [Pacific Mainnet](/getting-started/network/pacific-mainnet).\n\nUse the RPC endpoint for your target network. [Atlantic Testnet](/getting-started/network/atlantic-testnet) has a different chain ID.",
+    "sources": [
+      "https://docs.pharos.xyz/api-and-sdk/json-rpc-methods",
+      "https://docs.pharos.xyz/getting-started/network/pacific-mainnet",
+      "https://docs.pharos.xyz/tooling-and-infrastructure/rpc/zan",
+      "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain",
+      "https://docs.pharos.xyz/node-and-validator-guide/node-debugging-and-configuration",
+      "https://docs.pharos.xyz/introduction/readme",
+      "https://docs.pharos.xyz/tooling-and-infrastructure/rpc/alchemy",
+      "https://docs.pharos.xyz/tooling-and-infrastructure/rpc",
+      "https://docs.pharos.xyz/getting-started/network/atlantic-testnet",
+      "https://docs.pharos.xyz/tooling-and-infrastructure/mcp"
+    ],
+    "chain_tool": "get_chain_info",
+    "arguments": {},
+    "expected_checks": [
+      "chainId equals hexadecimal chainIdHex",
+      "chainIdMatches is true"
+    ],
+    "read_only": true
+  },
+  "execution": {
+    "provider": "Chain MCP",
+    "tool": "get_chain_info",
+    "arguments": {},
+    "requires_signature": false,
+    "result": {
+      "name": "Pharos",
+      "chainId": 1672,
+      "chainIdHex": "0x688",
+      "expectedChainId": 1672,
+      "chainIdMatches": true,
+      "latestBlock": "20883112",
+      "latestBlockHex": "0x13ea6a8",
+      "nativeSymbol": "PROS",
+      "clientVersion": "portal/1.0.0",
+      "rpcUrl": "https://rpc.pharos.xyz"
+    }
+  },
+  "verification": {
+    "matches_plan": true,
+    "checks": {
+      "hex_matches_decimal": true,
+      "configured_chain_matches": true
+    }
+  }
+}

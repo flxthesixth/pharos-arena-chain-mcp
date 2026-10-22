@@ -1,0 +1,44 @@
+{
+  "request": "How do I get the latest block number?",
+  "status": "success",
+  "plan": {
+    "docs_question": "How do I get the latest Pharos block number with JSON-RPC eth_blockNumber?",
+    "docs_answer": "Send a JSON-RPC `POST` to Pharos\u2019s mainnet endpoint, `https://rpc.pharos.xyz`, with `eth_blockNumber` and no parameters:\n\n```bash\ncurl https://rpc.pharos.xyz \\\n  -X POST \\\n  -H \"Content-Type: application/json\" \\\n  --data '{\"jsonrpc\":\"2.0\",\"method\":\"eth_blockNumber\",\"params\":[],\"id\":1}'\n```\n\nThe response\u2019s `result` is the latest block number in hexadecimal, for example:\n\n```json\n{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":\"0x54aceb\"}\n```\n\nFor a local node, use its RPC URL instead. See [Pacific Mainnet](/getting-started/network/pacific-mainnet) and the [JSON-RPC API Methods](/api-and-sdk/json-rpc-methods).",
+    "sources": [
+      "https://docs.pharos.xyz/api-and-sdk/json-rpc-methods",
+      "https://docs.pharos.xyz/node-and-validator-guide/node-debugging-and-configuration",
+      "https://docs.pharos.xyz/tooling-and-infrastructure/mcp",
+      "https://docs.pharos.xyz/node-and-validator-guide/rollback-blocks",
+      "https://docs.pharos.xyz/tooling-and-infrastructure/rpc/alchemy",
+      "https://docs.pharos.xyz/node-and-validator-guide/validator-node-deployment/node-configuration",
+      "https://docs.pharos.xyz/tooling-and-infrastructure/rpc",
+      "https://docs.pharos.xyz/getting-started/network/pacific-mainnet",
+      "https://docs.pharos.xyz/api-and-sdk/eth-getproof",
+      "https://docs.pharos.xyz/getting-started/network/atlantic-testnet"
+    ],
+    "chain_tool": "get_block_number",
+    "arguments": {},
+    "expected_checks": [
+      "blockNumber equals hexadecimal blockNumberHex",
+      "block number is non-negative"
+    ],
+    "read_only": true
+  },
+  "execution": {
+    "provider": "Chain MCP",
+    "tool": "get_block_number",
+    "arguments": {},
+    "requires_signature": false,
+    "result": {
+      "blockNumber": "20883119",
+      "blockNumberHex": "0x13ea6af"
+    }
+  },
+  "verification": {
+    "matches_plan": true,
+    "checks": {
+      "hex_matches_decimal": true,
+      "non_negative": true
+    }
+  }
+}

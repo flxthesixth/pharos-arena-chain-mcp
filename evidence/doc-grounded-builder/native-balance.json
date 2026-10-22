@@ -1,0 +1,55 @@
+{
+  "request": "How do I read native balance for 0x0000000000000000000000000000000000000000?",
+  "status": "success",
+  "plan": {
+    "docs_question": "How do I read the native token balance of an address on Pharos with eth_getBalance?",
+    "docs_answer": "Call `eth_getBalance` with the address and a block tag such as `\"latest\"`. Pharos returns the native **PROS** balance as a hex-encoded wei value.\n\n```bash\ncurl https://rpc.pharos.xyz \\\n  -X POST \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_getBalance\",\n    \"params\": [\"0xYourAddress\", \"latest\"],\n    \"id\": 1\n  }'\n```\n\nThe response\u2019s `result` is in wei. Convert it to PROS by parsing the hex value as an integer and dividing by `10^18`. You can also use a block number or another supported tag, such as `\"pending\"` or `\"finalized\"`.\n\nSee [JSON-RPC API Methods](/api-and-sdk/json-rpc-methods) and [Get PROS Gas](/getting-started/get-pros-gas).",
+    "sources": [
+      "https://docs.pharos.xyz/api-and-sdk/json-rpc-methods",
+      "https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-token",
+      "https://docs.pharos.xyz/developer-guide/foundry/write-your-first-token",
+      "https://docs.pharos.xyz/getting-started/token-registry",
+      "https://docs.pharos.xyz/developer-guide/rust",
+      "https://docs.pharos.xyz/getting-started/get-pros-gas",
+      "https://docs.pharos.xyz/introduction/readme",
+      "https://docs.pharos.xyz/tooling-and-infrastructure/mcp",
+      "https://docs.pharos.xyz/developer-guide/hardhat",
+      "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide"
+    ],
+    "chain_tool": "get_balance",
+    "arguments": {
+      "address": "0x0000000000000000000000000000000000000000",
+      "block": "latest"
+    },
+    "expected_checks": [
+      "returned address equals requested address",
+      "balanceWei equals balanceHex",
+      "human PROS balance equals balanceWei at 18 decimals"
+    ],
+    "read_only": true
+  },
+  "execution": {
+    "provider": "Chain MCP",
+    "tool": "get_balance",
+    "arguments": {
+      "address": "0x0000000000000000000000000000000000000000",
+      "block": "latest"
+    },
+    "requires_signature": false,
+    "result": {
+      "address": "0x0000000000000000000000000000000000000000",
+      "balanceWei": "0",
+      "balance": "0",
+      "symbol": "PROS",
+      "balanceHex": "0x0"
+    }
+  },
+  "verification": {
+    "matches_plan": true,
+    "checks": {
+      "address_matches": true,
+      "hex_matches_wei": true,
+      "units_match": true
+    }
+  }
+}

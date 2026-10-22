@@ -1,0 +1,68 @@
+{
+  "task": "docs-chain-mcp-agent",
+  "observed_at": "2026-10-22T01:03:24.638300+00:00",
+  "network": "Pharos mainnet",
+  "chain_id": 1672,
+  "block": 20883043,
+  "contract": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+  "read_only": true,
+  "calls": [
+    {
+      "function": "decimals()",
+      "selector": "0x313ce567",
+      "docs_mcp": {
+        "query": "What does the ERC-20 decimals() function return, and how should its value be used to interpret token amounts? Include sources.",
+        "answer": "`decimals()` returns the token\u2019s decimal-place count as a `uint8`. Use it to scale the raw integer amount into a human-readable amount:\n\n**Displayed amount = raw amount \u00f7 10^decimals**\n\nFor example, with 6 decimals, a raw amount of `1,234,567` represents `1.234567` tokens. To send `1.23` tokens, pass `1,230,000` as the raw amount.\n\nThe value varies by token: the Pharos registry lists tokens with both 6 and 18 decimals. Check the token contract rather than assuming a particular value. The [Rust](/developer-guide/rust) sets `DECIMALS` to `18`, while the [x402 Pacific Mainnet](/developer-guide/x402/x402-pacific-mainnet) converts USDC amounts using `10^6`. The [Token Registry](/getting-started/token-registry) shows examples of each.\n\n# Sources\n\n- [Write Your First Token](https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-token)\n- [Token Registry](https://docs.pharos.xyz/getting-started/token-registry)\n- [Rust](https://docs.pharos.xyz/developer-guide/rust)\n- [Write Your First Token](https://docs.pharos.xyz/developer-guide/foundry/write-your-first-token)\n- [Canonical Contracts](https://docs.pharos.xyz/getting-started/canonical-contracts)\n- [x402 Pacific Mainnet](https://docs.pharos.xyz/developer-guide/x402/x402-pacific-mainnet)\n- [Gas Model](https://docs.pharos.xyz/getting-started/gas-model)\n- [JSON-RPC API Methods](https://docs.pharos.xyz/api-and-sdk/json-rpc-methods)\n- [Node Management](https://docs.pharos.xyz/node-and-validator-guide/node-management)\n- [Interoperability](https://docs.pharos.xyz/developer-guide/interoperability)",
+        "sources": [
+          "https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-token",
+          "https://docs.pharos.xyz/getting-started/token-registry",
+          "https://docs.pharos.xyz/developer-guide/rust",
+          "https://docs.pharos.xyz/developer-guide/foundry/write-your-first-token",
+          "https://docs.pharos.xyz/getting-started/canonical-contracts",
+          "https://docs.pharos.xyz/developer-guide/x402/x402-pacific-mainnet",
+          "https://docs.pharos.xyz/getting-started/gas-model",
+          "https://docs.pharos.xyz/api-and-sdk/json-rpc-methods",
+          "https://docs.pharos.xyz/node-and-validator-guide/node-management",
+          "https://docs.pharos.xyz/developer-guide/interoperability"
+        ]
+      },
+      "chain_mcp": {
+        "tool": "eth_call",
+        "raw_result": "0x0000000000000000000000000000000000000000000000000000000000000006",
+        "decoded": 6
+      },
+      "interpretation": "USDC reports 6 decimals, so one displayed USDC equals 10^6 raw units."
+    },
+    {
+      "function": "totalSupply()",
+      "selector": "0x18160ddd",
+      "docs_mcp": {
+        "query": "What does the ERC-20 totalSupply() function return, and how should it be interpreted with token decimals? Include sources.",
+        "answer": "`totalSupply()` returns a `uint256`: an integer count of the token\u2019s smallest units. The ERC-20 ABI example lists `totalSupply` with that return type in the [Rust](/developer-guide/rust).\n\nTo interpret it as a human-readable token amount, divide the returned integer by `10 ** decimals`. For example, with 6 decimals, `1,234,567` represents `1.234567` tokens. The [Token Registry](/getting-started/token-registry) lists USDC and USDT with 6 decimals; a Pharos example also converts `$0.01` to `10,000` USDC units using that precision in the [x402 Atlantic Testnet](/developer-guide/x402/x402-atlantic-testnet).\n\nDecimals affect how the integer is displayed, not the value returned by `totalSupply()`.\n\n# Sources\n\n- [Canonical Contracts](https://docs.pharos.xyz/getting-started/canonical-contracts)\n- [Chainlink Push Engine Feeds](https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-pe)\n- [Rust](https://docs.pharos.xyz/developer-guide/rust)\n- [Pharos Skill Engine](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide)\n- [Circle CCTP](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp)\n- [Token Registry](https://docs.pharos.xyz/getting-started/token-registry)\n- [JSON-RPC API Methods](https://docs.pharos.xyz/api-and-sdk/json-rpc-methods)\n- [x402](https://docs.pharos.xyz/developer-guide/x402)\n- [FAQs](https://docs.pharos.xyz/getting-started/faqs)\n- [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp)\n- [Write Your First Uniswap Contract](https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-uniswap-contract)\n- [x402 Pacific Mainnet](https://docs.pharos.xyz/developer-guide/x402/x402-pacific-mainnet)\n- [x402 Atlantic Testnet](https://docs.pharos.xyz/developer-guide/x402/x402-atlantic-testnet)\n- [Node Management](https://docs.pharos.xyz/node-and-validator-guide/node-management)\n- [Interoperability](https://docs.pharos.xyz/developer-guide/interoperability)",
+        "sources": [
+          "https://docs.pharos.xyz/getting-started/canonical-contracts",
+          "https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-pe",
+          "https://docs.pharos.xyz/developer-guide/rust",
+          "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide",
+          "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp",
+          "https://docs.pharos.xyz/getting-started/token-registry",
+          "https://docs.pharos.xyz/api-and-sdk/json-rpc-methods",
+          "https://docs.pharos.xyz/developer-guide/x402",
+          "https://docs.pharos.xyz/getting-started/faqs",
+          "https://docs.pharos.xyz/tooling-and-infrastructure/mcp",
+          "https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-uniswap-contract",
+          "https://docs.pharos.xyz/developer-guide/x402/x402-pacific-mainnet",
+          "https://docs.pharos.xyz/developer-guide/x402/x402-atlantic-testnet",
+          "https://docs.pharos.xyz/node-and-validator-guide/node-management",
+          "https://docs.pharos.xyz/developer-guide/interoperability"
+        ]
+      },
+      "chain_mcp": {
+        "tool": "eth_call",
+        "raw_result": "0x00000000000000000000000000000000000000000000000000002bd623ed67fd",
+        "decoded": "48198725756925"
+      },
+      "interpretation": "Docs say scale totalSupply by decimals(); 48198725756925 raw units at 6 decimals equal 48198725.756925 USDC."
+    }
+  ]
+}
