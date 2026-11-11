@@ -1,8 +1,9 @@
 # Arena task map
 
 30 entries mapped from local `arena-tasks.json` catalog. Catalog stays unchanged and ignored.
-Only Batch Executor and Policy Gatekeeper source migrated; tests are links to existing root suite,
-evidence indexes link to original snapshots. Remaining 28 tasks are navigation only, not migrated.
+Batch Executor, Policy Gatekeeper, Read Contract State, and Event/Log Monitor source migrated.
+Existing root test links and embedded self-tests stay in place; evidence stays at original paths.
+Remaining 26 tasks are navigation only, not migrated.
 Unavailable means no matching implementation/test/evidence/proof found in this checkout, not a completion claim.
 Local-only legacy paths are plain text marked not published yet; they do not imply publication or approval.
 No `shared/` directory: no genuinely shared code extracted.
@@ -11,8 +12,8 @@ No `shared/` directory: no genuinely shared code extracted.
 
 | Task slug | Layout | Docs | Source | Tests | Evidence | Proof page |
 | --- | --- | --- | --- | --- | --- | --- |
-| read-contract-state | Legacy / not migrated | [README-arena-contract-state.md](../README-arena-contract-state.md) | [arena_contract_state.py](../arena_contract_state.py) | Unavailable | Unavailable | [docs/index.html](../docs/index.html) |
-| event-log-monitor | Legacy / not migrated | [README-arena-event-monitor.md](../README-arena-event-monitor.md) | [arena_event_monitor.py](../arena_event_monitor.py) | Unavailable | [evidence/event-log-monitor.json](../evidence/event-log-monitor.json) | [docs/event-log-monitor/index.html](../docs/event-log-monitor/index.html) |
+| read-contract-state | Source migrated | [tasks/read-contract-state/README.md](../tasks/read-contract-state/README.md)<br>[README-arena-contract-state.md](../README-arena-contract-state.md) | [tasks/read-contract-state/source/arena_contract_state.py](../tasks/read-contract-state/source/arena_contract_state.py) | Embedded `--self-test` | Unavailable | [docs/index.html](../docs/index.html) |
+| event-log-monitor | Source migrated | [tasks/event-log-monitor/README.md](../tasks/event-log-monitor/README.md)<br>[README-arena-event-monitor.md](../README-arena-event-monitor.md) | [tasks/event-log-monitor/source/arena_event_monitor.py](../tasks/event-log-monitor/source/arena_event_monitor.py) | Embedded `--self-test` | [evidence/event-log-monitor.json](../evidence/event-log-monitor.json) | [docs/event-log-monitor/index.html](../docs/event-log-monitor/index.html) |
 | docs-mcp-onboarding | Legacy / not migrated | [README-docs-mcp-onboarding.md](../README-docs-mcp-onboarding.md) | [pharos_docs.py](../pharos_docs.py) | Unavailable | [evidence/docs-mcp-onboarding.json](../evidence/docs-mcp-onboarding.json) | [docs/docs-mcp-onboarding/index.html](../docs/docs-mcp-onboarding/index.html) |
 | doc-search-cli | Legacy / not migrated | [README-doc-search.md](../README-doc-search.md) | [pharos_docs.py](../pharos_docs.py) | Unavailable | [evidence/doc-search-cli.json](../evidence/doc-search-cli.json) | [docs/doc-search-cli/index.html](../docs/doc-search-cli/index.html) |
 | threshold-guardian | Legacy / not migrated | [README-threshold-guardian.md](../README-threshold-guardian.md) | [threshold_guardian.py](../threshold_guardian.py) | [threshold_guardian_self_test.py](../threshold_guardian_self_test.py) | [evidence/threshold-guardian.json](../evidence/threshold-guardian.json) | [docs/threshold-guardian/index.html](../docs/threshold-guardian/index.html) |

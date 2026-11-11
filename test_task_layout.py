@@ -1,4 +1,5 @@
 """Offline migration regression: imports, caller cwd, legacy paths, navigation."""
+import hashlib
 import importlib
 import json
 import os
@@ -24,6 +25,69 @@ class TaskLayoutTests(unittest.TestCase):
             self.assertEqual(Path(legacy.__file__), ROOT / f'tasks/{slug}/source/{module}.py')
             self.assertEqual((ROOT / f'tasks/{slug}/tests/test_{module}.py').resolve(),
                              ROOT / f'test_{module}.py')
+
+    def test_readonly_imports_alias_and_embedded_checks(self):
+        for slug, module in [('read-contract-state', 'arena_contract_state'),
+                             ('event-log-monitor', 'arena_event_monitor')]:
+            legacy = importlib.import_module(module)
+            canonical = importlib.import_module(f'tasks.{slug}.source.{module}')
+            self.assertIs(legacy, canonical)
+            assert legacy.__file__ is not None
+            self.assertEqual(Path(legacy.__file__), ROOT / f'tasks/{slug}/source/{module}.py')
+            legacy.self_test()
+            for script in [f'{module}.py', f'tasks/{slug}/source/{module}.py']:
+                with tempfile.TemporaryDirectory() as folder:
+                    result = subprocess.run([sys.executable, str(ROOT / script), '--self-test'],
+                                            cwd=folder, capture_output=True, text=True, timeout=10)
+                    self.assertEqual(result.returncode, 0, result.stderr)
+                    self.assertEqual(result.stdout, 'self-test passed\n')
+                    self.assertEqual(list(Path(folder).iterdir()), [])
+
+    def test_event_cli_resumes_caller_state_without_network(self):
+        # Patch transport before loading either real CLI; unknown requests fail closed.
+        harness = '''
+import io, json, runpy, sys
+from unittest.mock import patch
+class Response(io.BytesIO):
+    headers = {'Mcp-Session-Id': 'offline'}
+def transport(request, timeout):
+    payload = json.loads(request.data)
+    if payload['method'] == 'initialize':
+        value = {}
+    else:
+        assert payload['method'] == 'tools/call'
+        tool = payload['params']
+        name = tool['name']
+        if name == 'get_chain_info':
+            value = {'chainId': 1672, 'chainIdMatches': True, 'latestBlock': 10}
+        elif name == 'get_block_number':
+            value = {'blockNumber': 10}
+        elif name == 'get_logs':
+            assert tool['arguments']['fromBlock'] == '0xa'
+            assert tool['arguments']['toBlock'] == '0xa'
+            value = {'logs': []}
+        else:
+            raise AssertionError(name)
+        value = {'content': [{'type': 'text', 'text': json.dumps(value)}]}
+    return Response(json.dumps({'result': value}).encode())
+script = sys.argv[1]
+sys.path.insert(0, sys.argv[2])
+sys.argv = [script, '--state', 'resume.json', '--once']
+with patch('urllib.request.urlopen', transport):
+    runpy.run_path(script, run_name='__main__')
+'''
+        for script in ['arena_event_monitor.py',
+                       'tasks/event-log-monitor/source/arena_event_monitor.py']:
+            with tempfile.TemporaryDirectory() as folder:
+                state = Path(folder) / 'resume.json'
+                state.write_text('{"next_block": 10}')
+                for expected in [11, 11]:
+                    result = subprocess.run([sys.executable, '-c', harness, str(ROOT / script), str(ROOT)],
+                                            cwd=folder, capture_output=True, text=True, timeout=10)
+                    self.assertEqual(result.returncode, 0, result.stderr)
+                    self.assertEqual(result.stdout, '')
+                    self.assertEqual(json.loads(state.read_text()), {'next_block': expected})
+                self.assertEqual([p.name for p in Path(folder).iterdir()], ['resume.json'])
 
     def test_policy_cli_preserves_caller_paths_and_audit_append(self):
         request = {'action': 'transfer', 'asset': 'USDC', 'amount': '25',
@@ -80,6 +144,8 @@ class TaskLayoutTests(unittest.TestCase):
             self.assertTrue(os.path.lexists(ROOT / path), path)
             mode = '120000' if (ROOT / path).is_symlink() else '100644'
             self.assertEqual(mode, item['git_mode'], path)
+            content = os.readlink(ROOT / path).encode() if mode == '120000' else (ROOT / path).read_bytes()
+            self.assertEqual(hashlib.sha256(content).hexdigest(), item['sha256'], path)
             published[path] = (mode, None)
             if mode == '120000':
                 symlinks[path] = os.readlink(ROOT / path)
