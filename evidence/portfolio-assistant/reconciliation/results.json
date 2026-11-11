@@ -1,0 +1,53 @@
+{
+  "mode": "Offline saved-response replay; not fresh RPC or authenticated capture",
+  "original_answers": 7,
+  "original_deltas": [
+    {
+      "question": "What is my wallet balance?",
+      "allowed_changed_paths": []
+    },
+    {
+      "question": "How many shares are in my positions?",
+      "allowed_changed_paths": []
+    },
+    {
+      "question": "Which vaults hold assets?",
+      "allowed_changed_paths": []
+    },
+    {
+      "question": "Where is my USDC?",
+      "allowed_changed_paths": [
+        "/total_usdc_raw/method"
+      ]
+    },
+    {
+      "question": "Compare RockawayX versus SharpByte",
+      "allowed_changed_paths": []
+    },
+    {
+      "question": "What's my biggest position?",
+      "allowed_changed_paths": [
+        "/wallet_balances"
+      ]
+    },
+    {
+      "question": "How much have I earned?",
+      "allowed_changed_paths": []
+    }
+  ],
+  "later_exact_answers": 7,
+  "financial_value_mismatches": [],
+  "ready_to_publish": false,
+  "video_recorded_exact_answers": 7,
+  "captured_state_answer_equality": true,
+  "capture_raw_rpc_trace_available": false,
+  "capture_block": 22707754,
+  "capture_total_usdc_raw": "2002137514272",
+  "r1_inputs_and_source_hashes_match": true,
+  "accepted_video_sha256": "b16168dc560578acf69581dc0c3b98729f803b767cd851bf58f90d276027c578",
+  "security_provenance_hold": [
+    "capture.py assertions bypassed under python -O",
+    "Authenticated capture-time remote-driver baseline absent"
+  ],
+  "capture_authenticity_established": false
+}

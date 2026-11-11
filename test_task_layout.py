@@ -194,9 +194,22 @@ with patch('urllib.request.urlopen', transport):
         if catalog.exists():
             self.assertEqual(set(slugs), {task['slug'] for task in json.loads(catalog.read_text())})
         videos = (ROOT / 'videos/README.md').read_text()
-        self.assertEqual(re.findall(r'https://x\.com/\S+', videos), [
-            'https://x.com/mxmeepo/status/2120326041436914009?a=-IqSQ-9evwt9IC7fG4g&s=20',
-            'https://x.com/mxmeepo/status/2120319479930605855?a=kIKn2WCLkwvdDC785Ns&s=20'])
+        expected = {
+            'Batch Executor': 'https://x.com/mxmeepo/status/2120326041436914009?a=-IqSQ-9evwt9IC7fG4g&s=20',
+            'Policy Gatekeeper': 'https://x.com/mxmeepo/status/2120319479930605855?a=kIKn2WCLkwvdDC785Ns&s=20',
+            'Dry-Run Executor': 'https://x.com/mxmeepo/status/2120357677612368109?a=QtlqnFH4-3QUrP_7v7k&s=20',
+            'Portfolio Assistant': 'https://x.com/mxmeepo/status/2120372181700149589?a=zXFZifza2PlmdXDxyZE&s=20',
+        }
+        sections = re.findall(r'^## ([^\n]+)\n(.*?)(?=^## |\Z)', videos, re.M | re.S)
+        self.assertEqual([(name, re.findall(r'https://x\.com/\S+', body))
+                          for name, body in sections],
+                         [(name, [url]) for name, url in expected.items()])
+        self.assertEqual(re.findall(r'https://x\.com/\S+', videos), list(expected.values()))
+        for title, slug in [('Dry-Run Executor', 'dry-run-executor'),
+                            ('Portfolio Assistant', 'portfolio-assistant')]:
+            metadata = json.loads((ROOT / f'videos/{slug}.json').read_text())
+            self.assertEqual(metadata['task_slug'], slug)
+            self.assertEqual(metadata['x_url_exact'], expected[title])
         self.assertNotIn('2120318415240102317', videos)
 
 

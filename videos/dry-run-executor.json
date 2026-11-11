@@ -1,0 +1,59 @@
+{
+  "task_slug": "dry-run-executor",
+  "task_url": "https://pharos-agent-arena.vercel.app/tasks/dry-run-executor",
+  "repository_url": "https://github.com/flxthesixth/pharos-arena-chain-mcp",
+  "base_head": "9db7c01395b2eeb7c9baaca53a69d4aaaeb73202",
+  "observed_at_utc": "2026-11-11T03:32:55Z",
+  "x_url_exact": "https://x.com/mxmeepo/status/2120357677612368109?a=QtlqnFH4-3QUrP_7v7k&s=20",
+  "x_url_browser_resolved": "https://x.com/mxmeepo/status/2120357677612368109?s=20",
+  "x_caption": "simulate first. inspect the result. never broadcast.\n\nbuilt for Pharos Arena: a dry-run executor walkthrough with recorded MCP reads on chain 1672, pinned call and balance checks, and a fixture-only revert example. no transaction signed or broadcast.\n\n@pharos_network",
+  "x_verification": {
+    "author": "@mxmeepo",
+    "caption_task_matches": true,
+    "attached_video_duration_seconds": 86.541,
+    "attached_video_frame_seconds": 30,
+    "frame_identity": "PHAROS / ARENA; 03 / 06; Recorded MCP simulation; python3 evidence.py live; python3 dry_run_executor.py @transaction.json; Chain 1672. Block pinned for call and balance.",
+    "local_frame_comparison": "Same task, scene, commands and caption at 30 seconds; local duration 86.541667 seconds matches X rounded duration.",
+    "byte_identity": "Not established: X transcodes attachments. Delivered local hash verified separately."
+  },
+  "artifact": {
+    "path": "video-demos/dry-run-executor/dry-run-executor-timestamp-repaired-review.mp4",
+    "sha256": "1e1ca6f0837e43890ec1f7f451911c79550a62058deeb67ef88e09bb48d61a65",
+    "sha256_recomputed_match": true
+  },
+  "owner_acceptance": {
+    "basis": "Owner supplied exact X URL after posting approved caption replying to delivered hash-bound review copy, per owner handoff; post and task/video identity independently inspected.",
+    "scope": "Acceptance of delivered review copy with known non-security LIMITED media caveats; stop unwanted repairs.",
+    "independent_media_verdict": "LIMITED",
+    "independent_review_path": "video-demos/dry-run-executor/independent-review-visual.json",
+    "does_not_establish": ["full media QA PASS", "full task requirement coverage", "video bonus eligibility", "awarded video points", "security denial clearance"]
+  },
+  "limits_preserved": [
+    "Fixture revert is not on-chain evidence.",
+    "Expected balance is arithmetic projection, not state diff; gas estimate and price are unpinned.",
+    "Editorial captions, not verbatim or forced-aligned.",
+    "Independent continuous playback and perceptual listening remain unverified by this check.",
+    "Existing independent reviews remain unchanged; sampled frame identity is not full media QA."
+  ],
+  "arena": {
+    "authenticated_account": "flxthesixth",
+    "status": "APPROVED",
+    "awarded_points": 50,
+    "last_submitted_display": "22 Oct",
+    "reviewer_feedback": "Score 13/25 (quality 4, features 3, working 4, innovation 1, originality 1). Works against live Chain MCP with readable output and evidence files; 90 tests pass. Each task is a single short script, so depth is limited. No video. Points: 50 task = 50.",
+    "video_field": {
+      "value": null,
+      "verification": "NOT_EXPOSED",
+      "note": "Exact authenticated approved task page and My work contain no video URL field or submission URL links. No videoUrl/video_url value exposed in page scripts. Null means unknown, not verified empty; historical reviewer feedback says No video."
+    },
+    "edit_controls": "No submission edit/resubmit controls observed; only Sign out button.",
+    "submission_changed": false,
+    "resubmitted": false
+  },
+  "publication": {
+    "gate": "Already submitted and APPROVED; repository link only, never resubmit.",
+    "prepared_paths": ["videos/README.md", "videos/dry-run-executor.json"],
+    "remote_published": false,
+    "next_step": "Parent review exact two-file delta, then commit/push only those paths; do not modify Arena entry. Stored video value requires official read access if needed, not resubmission."
+  }
+}

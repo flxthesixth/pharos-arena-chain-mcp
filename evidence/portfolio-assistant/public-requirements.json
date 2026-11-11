@@ -1,0 +1,12 @@
+{
+  "https://pharos-agent-arena.vercel.app/tasks/portfolio-assistant": {
+    "status": 200,
+    "final_url": "https://pharos-agent-arena.vercel.app/tasks/portfolio-assistant",
+    "text": "Pharos Agent Arena \u00b7 Season of AI Agent Arena Tasks Workshops Leaderboard Resources \u2197 Sign in \u2190 All tasks Hard DeFi / Portfolio Portfolio Assistant Answers natural-language questions about a wallet's positions, balances, and yields across protocols (Harbor's query pattern, generalized). Points 200 +50 with video Build on ai.pharos.xyz What you'll build A natural-language assistant that answers questions about a wallet's positions, balances and yields across multiple protocols, such as \"what am I earning?\", \"where is my USDC?\" or \"what's my biggest position?\". This generalizes Harbor's query pattern. Requirements 01 Reads positions from at least 2 protocols or vaults, plus wallet token balances. 02 Answers at least 5 different natural-language question types correctly. 03 Shows numbers with sources: which contract and block each figure came from. 04 Says clearly when it doesn't know or can't read a protocol, rather than guessing. 05 Read-only: never initiates transactions. Reviewers score against this list. Missing items can mean partial points. What to submit A proof link reviewers can open \u2014 a share link from ai.pharos.xyz, a tx hash on the explorer, or a deployed demo. A repo link if you wrote code. Optional: a video walking through the build for +50 points. Submit your build Sign in with GitHub to submit and track your points. Sign in with GitHub Season of AI \u00b7 Agent Arena Build on ai.pharos.xyz \u00b7 DevHub \u00b7 Agent-Native Pharos"
+  },
+  "https://ai.pharos.xyz": {
+    "status": 200,
+    "final_url": "https://ai.pharos.xyz",
+    "text": "AI.Pharos | Pharos Official AI Agent Hub, MCP & Tools What are we building on PHAROS? Start with docs, tools, code, or an open-source task. Home llms.txt Network Info Skill Engine PharosMCP Build Tools Anvita Mate"
+  }
+}

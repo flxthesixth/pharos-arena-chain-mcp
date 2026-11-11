@@ -1,0 +1,58 @@
+{
+  "wallet": "0xa3a331bd8ad8122c3fce2a1ea2de4d0dde267bac",
+  "block": 22655586,
+  "wallet_balances": {
+    "USDC_raw": {
+      "value": "1974365593",
+      "contract": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+      "block": 22655586,
+      "method": "balanceOf(address)"
+    },
+    "PROS_wei": {
+      "value": "unknown",
+      "contract": "0x0000000000000000000000000000000000000000",
+      "block": 22655586,
+      "method": "eth_getBalance (native PROS)"
+    }
+  },
+  "vaults": {
+    "RockawayX": {
+      "vault": "0x047cD0a91E9B92ED979189a6C8A120bf280f02E5",
+      "asset": "unknown",
+      "shares": {
+        "value": "unknown",
+        "contract": "0x047cD0a91E9B92ED979189a6C8A120bf280f02E5",
+        "block": 22655586,
+        "method": "balanceOf(address)"
+      },
+      "underlying_usdc_raw": {
+        "value": "unknown",
+        "contract": "0x047cD0a91E9B92ED979189a6C8A120bf280f02E5",
+        "block": 22655586,
+        "method": "convertToAssets(uint256)"
+      }
+    },
+    "SharpByte": {
+      "vault": "0x15c25ED222fc498f672af5c3adb5ED0a96E1AFf1",
+      "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+      "shares": {
+        "value": "0",
+        "contract": "0x15c25ED222fc498f672af5c3adb5ED0a96E1AFf1",
+        "block": 22655586,
+        "method": "balanceOf(address)"
+      },
+      "underlying_usdc_raw": {
+        "value": "0",
+        "contract": "0x15c25ED222fc498f672af5c3adb5ED0a96E1AFf1",
+        "block": 22655586,
+        "method": "convertToAssets(uint256)"
+      }
+    }
+  },
+  "total_usdc_raw": {
+    "value": "unknown",
+    "contract": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+    "block": 22655586,
+    "method": "sum(wallet balanceOf + vault convertToAssets)"
+  }
+}

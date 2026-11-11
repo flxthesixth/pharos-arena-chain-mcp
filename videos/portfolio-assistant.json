@@ -1,0 +1,79 @@
+{
+  "task_slug": "portfolio-assistant",
+  "task_url": "https://pharos-agent-arena.vercel.app/tasks/portfolio-assistant",
+  "repository_url": "https://github.com/flxthesixth/pharos-arena-chain-mcp",
+  "base_head": "9db7c01395b2eeb7c9baaca53a69d4aaaeb73202",
+  "observed_at_utc": "2026-11-11T04:29:06Z",
+  "x_url_exact": "https://x.com/mxmeepo/status/2120372181700149589?a=zXFZifza2PlmdXDxyZE&s=20",
+  "x_url_browser_resolved": "https://x.com/mxmeepo/status/2120372181700149589?s=20",
+  "x_caption": "read the balances. trace every value. don’t count shares twice.\n\na Portfolio Assistant walkthrough using recorded wallet and vault reads, with contract, block and method citations. totals combine wallet USDC and underlying vault assets, not shares.\n\n@pharos_network",
+  "x_verification": {
+    "author": "@mxmeepo",
+    "caption_task_matches": true,
+    "attached_video_duration_seconds": 79,
+    "attached_video_frame_seconds": 30,
+    "frame_identity": "PHAROS / PORTFOLIO ASSISTANT; 03 OF 06; Every value keeps its citation.; RECORDED JSON / RAW UNITS; block 22707754; convertToAssets(uint256); underlying_usdc_raw 2000163148679; total_usdc_raw 2002137514272; shares excluded.",
+    "local_frame_comparison": "X attachment and delivered local MP4 show matching task, scene, fields and caption at 30 seconds; both durations 79 seconds. Sampled identity only, not full QA.",
+    "byte_identity": "Not established: X transcodes attachments. Local delivered hash verified separately.",
+    "anonymous_access": "Not tested for X; observed through existing browser session."
+  },
+  "artifact": {
+    "path": "video-demos/portfolio-assistant/portfolio-assistant-review-r1.mp4",
+    "sha256": "b16168dc560578acf69581dc0c3b98729f803b767cd851bf58f90d276027c578",
+    "sha256_recomputed_match": true,
+    "video_and_audio_duration_seconds": 79
+  },
+  "owner_acceptance": {
+    "basis": "Owner handoff explicitly accepts delivered artifact with known non-security LIMITED caveats and supplies exact posted X URL; caption and attached frame independently inspected.",
+    "scope": "Delivered hash-bound review copy accepted; not full QA or requirement PASS; stop unwanted repairs.",
+    "independent_media_verdict": "LIMITED",
+    "independent_review_path": "video-demos/portfolio-assistant/independent-review-r1.md",
+    "does_not_establish": ["full media QA PASS", "full task requirement coverage", "publication eligibility", "video bonus eligibility", "awarded points", "security denial clearance"]
+  },
+  "limits_preserved": [
+    "Recorded command/result summary still is not continuous command execution or complete stdout.",
+    "Historical replay and fixture summaries are not fresh live executions.",
+    "Independent continuous playback, perceptual listening, speech alignment and exhaustive transition/privacy review remain unperformed.",
+    "Capture-time/current-driver equivalence remains unverified; retained source digest alone does not establish equivalence.",
+    "Current local tests passing does not establish recorded-artifact equivalence or complete rubric coverage."
+  ],
+  "arena": {
+    "authenticated_account": "flxthesixth",
+    "status": "UNSUBMITTED",
+    "status_basis": "Exact authenticated task page displays SUBMIT YOUR BUILD with Submit for review; no submission status/review section. Refreshed My work has no Portfolio Assistant entry.",
+    "form": {
+      "proof_url": {"value": "", "required": true},
+      "repo_url": {"value": "", "required": false},
+      "video_url": {"value": "", "required": false},
+      "notes": {"value": "", "required": false}
+    },
+    "proof_requirement": "A proof link reviewers can open: ai.pharos.xyz share link, explorer transaction hash, or deployed demo. Repo link if code written; optional video for +50 points.",
+    "rubric": [
+      "Reads positions from at least 2 protocols or vaults, plus wallet token balances.",
+      "Answers at least 5 different natural-language question types correctly.",
+      "Shows numbers with sources: which contract and block each figure came from.",
+      "Says clearly when it does not know or cannot read a protocol, rather than guessing.",
+      "Read-only: never initiates transactions."
+    ],
+    "submission_changed": false,
+    "submitted": false,
+    "resubmitted": false
+  },
+  "readiness": {
+    "ready_to_submit": false,
+    "verdict": "BLOCKED_MISSING_PUBLIC_PROOF_AND_SOURCE",
+    "anonymous_repository_check": "Public GitHub repository, default branch main. Exact implementation and Portfolio README raw URLs each return HTTP 404.",
+    "source_paths_untracked": ["pharos_portfolio_box3_20261110.py", "README-portfolio-assistant.md"],
+    "current_local_check": "python3 -B -m unittest discover -p 'test_pharos_portfolio_box3_20261110.py' -v: 11 tests passed; fixture/local test evidence, no fresh RPC execution.",
+    "gaps": [
+      "Required reviewer-openable proof URL absent; no verified share link or deployed demo supplied. Do not substitute unrelated explorer transaction or video for build proof.",
+      "Current Portfolio implementation and README untracked locally and unavailable on public default branch; complete public source/proof/current-driver equivalence not established.",
+      "Full independent requirement coverage remains incomplete; owner media acceptance does not close implementation or publication gates."
+    ]
+  },
+  "publication": {
+    "prepared_paths": ["videos/README.md", "videos/portfolio-assistant.json"],
+    "remote_published": false,
+    "next_step": "Parent review scoped delta before any commit/push. Obtain genuine reviewer-openable proof and publish reviewed complete current source; verify rubric and public access before authorized first submission with exact X URL. No fabricated fields."
+  }
+}

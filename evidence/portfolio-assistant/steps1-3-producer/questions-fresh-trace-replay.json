@@ -1,0 +1,243 @@
+{
+  "mode": "Pinned replay of one fresh live snapshot, not fresh per-question RPC",
+  "answers": [
+    {
+      "wallet": "0xa3a331bd8ad8122c3fce2a1ea2de4d0dde267bac",
+      "question": "Please show my wallet balance",
+      "intent": "balances",
+      "block": 22661772,
+      "wallet_balances": {
+        "USDC_raw": {
+          "value": "1974365593",
+          "contract": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+          "block": 22661772,
+          "method": "balanceOf(address)"
+        },
+        "PROS_wei": {
+          "value": "0",
+          "contract": "0x0000000000000000000000000000000000000000",
+          "block": 22661772,
+          "method": "eth_getBalance (native PROS)"
+        }
+      }
+    },
+    {
+      "wallet": "0xa3a331bd8ad8122c3fce2a1ea2de4d0dde267bac",
+      "question": "What is my current USDC balance?",
+      "intent": "balances",
+      "block": 22661772,
+      "wallet_balances": {
+        "USDC_raw": {
+          "value": "1974365593",
+          "contract": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+          "block": 22661772,
+          "method": "balanceOf(address)"
+        }
+      }
+    },
+    {
+      "wallet": "0xa3a331bd8ad8122c3fce2a1ea2de4d0dde267bac",
+      "question": "How much USDC is in my wallet and RockawayX?",
+      "intent": "positions",
+      "block": 22661772,
+      "wallet_balances": {
+        "USDC_raw": {
+          "value": "1974365593",
+          "contract": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+          "block": 22661772,
+          "method": "balanceOf(address)"
+        }
+      },
+      "vaults": {
+        "RockawayX": {
+          "vault": "0x047cD0a91E9B92ED979189a6C8A120bf280f02E5",
+          "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+          "shares": {
+            "value": "1981531086279423740862327",
+            "contract": "0x047cD0a91E9B92ED979189a6C8A120bf280f02E5",
+            "block": 22661772,
+            "method": "balanceOf(address)"
+          },
+          "underlying_usdc_raw": {
+            "value": "2000016775870",
+            "contract": "0x047cD0a91E9B92ED979189a6C8A120bf280f02E5",
+            "block": 22661772,
+            "method": "convertToAssets(uint256)"
+          }
+        }
+      }
+    },
+    {
+      "wallet": "0xa3a331bd8ad8122c3fce2a1ea2de4d0dde267bac",
+      "question": "Compare wallet USDC and RockawayX",
+      "intent": "compare",
+      "block": 22661772,
+      "wallet_balances": {
+        "USDC_raw": {
+          "value": "1974365593",
+          "contract": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+          "block": 22661772,
+          "method": "balanceOf(address)"
+        }
+      },
+      "vaults": {
+        "RockawayX": {
+          "vault": "0x047cD0a91E9B92ED979189a6C8A120bf280f02E5",
+          "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+          "shares": {
+            "value": "1981531086279423740862327",
+            "contract": "0x047cD0a91E9B92ED979189a6C8A120bf280f02E5",
+            "block": 22661772,
+            "method": "balanceOf(address)"
+          },
+          "underlying_usdc_raw": {
+            "value": "2000016775870",
+            "contract": "0x047cD0a91E9B92ED979189a6C8A120bf280f02E5",
+            "block": 22661772,
+            "method": "convertToAssets(uint256)"
+          }
+        }
+      },
+      "comparison": {
+        "value": "RockawayX > Wallet USDC",
+        "unit": "USDC raw",
+        "sources": {
+          "Wallet USDC": {
+            "value": "1974365593",
+            "contract": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+            "block": 22661772,
+            "method": "balanceOf(address)"
+          },
+          "RockawayX": {
+            "value": "2000016775870",
+            "contract": "0x047cD0a91E9B92ED979189a6C8A120bf280f02E5",
+            "block": 22661772,
+            "method": "convertToAssets(uint256)"
+          }
+        },
+        "reason": null
+      }
+    },
+    {
+      "wallet": "0xa3a331bd8ad8122c3fce2a1ea2de4d0dde267bac",
+      "question": "Where is my USDC in my wallet and RockawayX?",
+      "intent": "exposure",
+      "block": 22661772,
+      "wallet_balances": {
+        "USDC_raw": {
+          "value": "1974365593",
+          "contract": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+          "block": 22661772,
+          "method": "balanceOf(address)"
+        }
+      },
+      "vaults": {
+        "RockawayX": {
+          "vault": "0x047cD0a91E9B92ED979189a6C8A120bf280f02E5",
+          "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+          "shares": {
+            "value": "1981531086279423740862327",
+            "contract": "0x047cD0a91E9B92ED979189a6C8A120bf280f02E5",
+            "block": 22661772,
+            "method": "balanceOf(address)"
+          },
+          "underlying_usdc_raw": {
+            "value": "2000016775870",
+            "contract": "0x047cD0a91E9B92ED979189a6C8A120bf280f02E5",
+            "block": 22661772,
+            "method": "convertToAssets(uint256)"
+          }
+        }
+      },
+      "total_usdc_raw": {
+        "value": "2001991141463",
+        "contract": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+        "block": 22661772,
+        "method": "sum(selected USDC positions); components cited separately"
+      }
+    },
+    {
+      "wallet": "0xa3a331bd8ad8122c3fce2a1ea2de4d0dde267bac",
+      "question": "Compare RockawayX versus SharpByte",
+      "intent": "compare",
+      "block": 22661772,
+      "vaults": {
+        "RockawayX": {
+          "vault": "0x047cD0a91E9B92ED979189a6C8A120bf280f02E5",
+          "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+          "shares": {
+            "value": "1981531086279423740862327",
+            "contract": "0x047cD0a91E9B92ED979189a6C8A120bf280f02E5",
+            "block": 22661772,
+            "method": "balanceOf(address)"
+          },
+          "underlying_usdc_raw": {
+            "value": "2000016775870",
+            "contract": "0x047cD0a91E9B92ED979189a6C8A120bf280f02E5",
+            "block": 22661772,
+            "method": "convertToAssets(uint256)"
+          }
+        },
+        "SharpByte": {
+          "vault": "0x15c25ED222fc498f672af5c3adb5ED0a96E1AFf1",
+          "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+          "shares": {
+            "value": "0",
+            "contract": "0x15c25ED222fc498f672af5c3adb5ED0a96E1AFf1",
+            "block": 22661772,
+            "method": "balanceOf(address)"
+          },
+          "underlying_usdc_raw": {
+            "value": "0",
+            "contract": "0x15c25ED222fc498f672af5c3adb5ED0a96E1AFf1",
+            "block": 22661772,
+            "method": "convertToAssets(uint256)"
+          }
+        }
+      },
+      "comparison": {
+        "value": "RockawayX > SharpByte",
+        "unit": "USDC raw",
+        "sources": {
+          "RockawayX": {
+            "value": "2000016775870",
+            "contract": "0x047cD0a91E9B92ED979189a6C8A120bf280f02E5",
+            "block": 22661772,
+            "method": "convertToAssets(uint256)"
+          },
+          "SharpByte": {
+            "value": "0",
+            "contract": "0x15c25ED222fc498f672af5c3adb5ED0a96E1AFf1",
+            "block": 22661772,
+            "method": "convertToAssets(uint256)"
+          }
+        },
+        "reason": null
+      }
+    },
+    {
+      "wallet": "0xa3a331bd8ad8122c3fce2a1ea2de4d0dde267bac",
+      "question": "What are my earnings in my wallet and RockawayX?",
+      "intent": "earnings",
+      "block": 22661772,
+      "earnings": {
+        "value": "unknown",
+        "reason": "No historical deposits, withdrawals, rewards, or cost basis; current balances cannot establish earnings or yield",
+        "sources": {
+          "Wallet USDC": {
+            "value": "1974365593",
+            "contract": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+            "block": 22661772,
+            "method": "balanceOf(address)"
+          },
+          "RockawayX": {
+            "value": "2000016775870",
+            "contract": "0x047cD0a91E9B92ED979189a6C8A120bf280f02E5",
+            "block": 22661772,
+            "method": "convertToAssets(uint256)"
+          }
+        }
+      }
+    }
+  ]
+}

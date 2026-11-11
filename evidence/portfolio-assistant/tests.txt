@@ -1,0 +1,11 @@
+test_earnings_need_historical_evidence (test_pharos_portfolio_box3_20261110.PortfolioTests.test_earnings_need_historical_evidence) ... ok
+test_equal_and_empty_vault_values (test_pharos_portfolio_box3_20261110.PortfolioTests.test_equal_and_empty_vault_values) ... ok
+test_natural_language_intents_and_citations (test_pharos_portfolio_box3_20261110.PortfolioTests.test_natural_language_intents_and_citations) ... ok
+test_unknown_propagates_and_invalid_input_rejected (test_pharos_portfolio_box3_20261110.PortfolioTests.test_unknown_propagates_and_invalid_input_rejected) ... ok
+test_usdc_balance_questions_respect_wallet_and_vault_objects (test_pharos_portfolio_box3_20261110.PortfolioTests.test_usdc_balance_questions_respect_wallet_and_vault_objects) ... ok
+test_wallet_balance_can_be_largest (test_pharos_portfolio_box3_20261110.PortfolioTests.test_wallet_balance_can_be_largest) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.003s
+
+OK

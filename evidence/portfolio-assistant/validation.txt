@@ -1,0 +1,7 @@
+Syntax: compile() PASS (both Portfolio Python files).
+Unittest: 6 tests PASS.
+Live snapshot: 17 successful read-only RPC calls; block 22655612.
+Seven distinct question intents: replay of exact live pinned RPC results PASS, not seven fresh network snapshots.
+CLI smoke: exit 0, block 22655655, total_usdc_raw 2001978906730.
+Static RPC call methods: eth_blockNumber, eth_call, eth_chainId, eth_getBalance, eth_getCode.
+ruff/mypy/bandit not installed; not run; no installs.
