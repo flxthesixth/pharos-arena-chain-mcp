@@ -1,5 +1,7 @@
 # Policy Gatekeeper — Pharos Agent Arena
 
+[Task folder](tasks/policy-gatekeeper/README.md) · [Video index](videos/README.md#policy-gatekeeper)
+
 Stdlib-only Python gate checks every transaction intent against spend-limit, destination-allowlist, and time-window rules. Every result names deciding rule and is appended to durable JSON Lines audit log. Denied requests never reach preparation callback. Allowed requests produce inert, unsigned, unbroadcast transaction intent only; script has no signing, wallet, RPC, or broadcast path.
 
 ## Files

@@ -2,6 +2,13 @@
 
 Public, reproducible implementations for Pharos Agent Arena. Each task has its own README, source, tests, evidence, and deployed proof page where submitted.
 
+## Repository layout
+
+- [All 30 tasks and existing artifacts](tasks/README.md).
+- [Batch Executor](tasks/batch-executor/README.md) and [Policy Gatekeeper](tasks/policy-gatekeeper/README.md): canonical source under task folders, root compatibility entrypoints retained.
+- [Known task videos](videos/README.md), with task backlinks; no heavy media added.
+- Existing submitted README, proof page, config, and evidence paths remain unchanged.
+
 ## Task Index
 
 ### Live read-only chain tools
@@ -46,7 +53,7 @@ python3 -m compileall -q .
 python3 -m unittest discover -v
 ```
 
-Current full suite: 72 tests. Python standard library is used unless a documented system CLI is required.
+Test count depends on local checkout; run suite above for current result. Python standard library is used unless a documented system CLI is required.
 
 ## Evidence Rules
 

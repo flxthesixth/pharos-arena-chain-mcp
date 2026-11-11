@@ -1,5 +1,7 @@
 # Batch Executor — Pharos Agent Arena
 
+[Task folder](tasks/batch-executor/README.md) · [Video index](videos/README.md#batch-executor)
+
 Stdlib-only Python CLI accepts 3 or more independent read calls and ABI-encodes one prepared `Multicall3.aggregate3((address,bool,bytes)[])` transaction. It simulates with `eth_call`, observes batch and hypothetical separate-call gas estimates, and never signs or broadcasts.
 
 Target is canonical Multicall3 deployment `0xcA11bde05977b3631167028862bE2a173976CA11` on Pharos mainnet (chain ID 1672). Live checks confirmed deployed bytecode and `getChainId() == 1672`.
